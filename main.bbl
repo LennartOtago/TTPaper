@@ -1,0 +1,1417 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{bardsley2012mcmc}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BJ}{%
+         family={Bardsley},
+         familyi={B\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SIAM}%
+    }
+    \strng{namehash}{BJ1}
+    \strng{fullhash}{BJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{3}
+    \field{pages}{A1316\bibrangedash A1332}
+    \field{title}{MCMC-based image reconstruction with uncertainty
+  quantification}
+    \field{volume}{34}
+    \field{journaltitle}{SIAM Journal on Scientific Computing}
+    \field{year}{2012}
+  \endentry
+
+  \entry{bardsley2014randomize}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BJ}{%
+         family={Bardsley},
+         familyi={B\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Solonen},
+         familyi={S\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Haario},
+         familyi={H\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Laine},
+         familyi={L\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SIAM}%
+    }
+    \strng{namehash}{BJ+1}
+    \strng{fullhash}{BJSAHHLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{4}
+    \field{pages}{A1895\bibrangedash A1910}
+    \field{title}{Randomize-then-optimize: A method for sampling from posterior
+  distributions in nonlinear inverse problems}
+    \field{volume}{36}
+    \field{journaltitle}{SIAM Journal on Scientific Computing}
+    \field{year}{2014}
+  \endentry
+
+  \entry{BardsleyTC2019RTO}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Bardsley},
+         familyi={B\bibinitperiod},
+         given={Johnathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CT}{%
+         family={Cui},
+         familyi={C\bibinitperiod},
+         given={Tiangang},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BJCT1}
+    \strng{fullhash}{BJCT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2017 MATRIX Annals}
+    \field{pages}{2\bibrangedash 12}
+    \field{series}{MATRIX Book Series}
+    \field{title}{A Metropolis-Hastings-Within-Gibbs sampler for nonlinear
+  hierarchical-Bayesian inverse problems}
+    \field{volume}{2}
+    \list{location}{1}{%
+      {Switzerland}%
+    }
+    \field{year}{2019}
+  \endentry
+
+  \entry{Carlotti99}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CM}{%
+         family={Carlotti},
+         familyi={C\bibinitperiod},
+         given={Massimo},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Ridolfi},
+         familyi={R\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Optica Publishing Group}%
+    }
+    \strng{namehash}{CMRM1}
+    \strng{fullhash}{CMRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{12}
+    \field{pages}{2398\bibrangedash 2409}
+    \field{title}{Derivation of temperature and pressure from submillimetric
+  limb observations}
+    \field{volume}{38}
+    \field{journaltitle}{Applied Optics}
+    \field{month}{04}
+    \field{year}{1999}
+  \endentry
+
+  \entry{champ2022generalizedlawtotalcovariance}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CCW}{%
+         family={Champ},
+         familyi={C\bibinitperiod},
+         given={Charles\bibnamedelima W.},
+         giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=SAV}{%
+         family={Sills},
+         familyi={S\bibinitperiod},
+         given={Andrew\bibnamedelima V.},
+         giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CCWSAV1}
+    \strng{fullhash}{CCWSAV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{The generalized law of total covariance}
+    \field{journaltitle}{preprint}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Dick_Kuo_Sloan_2013}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DJ}{%
+         family={Dick},
+         familyi={D\bibinitperiod},
+         given={Josef},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KFY}{%
+         family={Kuo},
+         familyi={K\bibinitperiod},
+         given={Frances\bibnamedelima Y.},
+         giveni={F\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=SIH}{%
+         family={Sloan},
+         familyi={S\bibinitperiod},
+         given={Ian\bibnamedelima H.},
+         giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJKFYSIH1}
+    \strng{fullhash}{DJKFYSIH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{133\bibrangedash 288}
+    \field{title}{High-dimensional integration: The quasi-Monte Carlo way}
+    \field{volume}{22}
+    \field{journaltitle}{Acta Numerica}
+    \field{year}{2013}
+  \endentry
+
+  \entry{dolgov2020approximation}{article}{}
+    \name{author}{4}{}{%
+      {{hash=DS}{%
+         family={Dolgov},
+         familyi={D\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AIK}{%
+         family={Anaya-Izquierdo},
+         familyi={A\bibinithyphendelim I\bibinitperiod},
+         given={Karim},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=FC}{%
+         family={Fox},
+         familyi={F\bibinitperiod},
+         given={Colin},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Scheichl},
+         familyi={S\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{DS+1}
+    \strng{fullhash}{DSAIKFCSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{603\bibrangedash 625}
+    \field{title}{Approximation and sampling of multivariate probability
+  distributions in the tensor train decomposition}
+    \field{volume}{30}
+    \field{journaltitle}{Statistics and Computing}
+    \field{year}{2020}
+  \endentry
+
+  \entry{fox2016fast}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FC}{%
+         family={Fox},
+         familyi={F\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=NRA}{%
+         family={Norton},
+         familyi={N\bibinitperiod},
+         given={R.\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SIAM}%
+    }
+    \strng{namehash}{FCNRA1}
+    \strng{fullhash}{FCNRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{1}
+    \field{pages}{1191\bibrangedash 1218}
+    \field{title}{Fast sampling in a linear-Gaussian inverse problem}
+    \field{volume}{4}
+    \field{journaltitle}{SIAM/ASA Journal on Uncertainty Quantification}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Froidevaux2008snrozone}{article}{}
+    \name{author}{36}{}{%
+      {{hash=FL}{%
+         family={Froidevaux},
+         familyi={F\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=JYB}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Y.\bibnamedelima B.},
+         giveni={Y\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Lambert},
+         familyi={L\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LNJ}{%
+         family={Livesey},
+         familyi={L\bibinitperiod},
+         given={Nathaniel\bibnamedelima J.},
+         giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=RWG}{%
+         family={Read},
+         familyi={R\bibinitperiod},
+         given={W.\bibnamedelima G.},
+         giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=WJW}{%
+         family={Waters},
+         familyi={W\bibinitperiod},
+         given={J.\bibnamedelima W.},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=BEV}{%
+         family={Browell},
+         familyi={B\bibinitperiod},
+         given={E.\bibnamedelima V.},
+         giveni={E\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=HJW}{%
+         family={Hair},
+         familyi={H\bibinitperiod},
+         given={J.\bibnamedelima W.},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=AMA}{%
+         family={Avery},
+         familyi={A\bibinitperiod},
+         given={M.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=MTJ}{%
+         family={McGee},
+         familyi={M\bibinitperiod},
+         given={T.\bibnamedelima J.},
+         giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=TLW}{%
+         family={Twigg},
+         familyi={T\bibinitperiod},
+         given={L.\bibnamedelima W.},
+         giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=SGK}{%
+         family={Sumnicht},
+         familyi={S\bibinitperiod},
+         given={G.\bibnamedelima K.},
+         giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=JKW}{%
+         family={Jucks},
+         familyi={J\bibinitperiod},
+         given={K.\bibnamedelima W.},
+         giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=MJJ}{%
+         family={Margitan},
+         familyi={M\bibinitperiod},
+         given={J.\bibnamedelima J.},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Sen},
+         familyi={S\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SRA}{%
+         family={Stachnik},
+         familyi={S\bibinitperiod},
+         given={R.\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=TGC}{%
+         family={Toon},
+         familyi={T\bibinitperiod},
+         given={G.\bibnamedelima C.},
+         giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BPF}{%
+         family={Bernath},
+         familyi={B\bibinitperiod},
+         given={P.\bibnamedelima F.},
+         giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=BCD}{%
+         family={Boone},
+         familyi={B\bibinitperiod},
+         given={C.\bibnamedelima D.},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=WKA}{%
+         family={Walker},
+         familyi={W\bibinitperiod},
+         given={K.\bibnamedelima A.},
+         giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=FMJ}{%
+         family={Filipiak},
+         familyi={F\bibinitperiod},
+         given={M.\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=HRS}{%
+         family={Harwood},
+         familyi={H\bibinitperiod},
+         given={R.\bibnamedelima S.},
+         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=FRA}{%
+         family={Fuller},
+         familyi={F\bibinitperiod},
+         given={R.\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=MGL}{%
+         family={Manney},
+         familyi={M\bibinitperiod},
+         given={G.\bibnamedelima L.},
+         giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SMJ}{%
+         family={Schwartz},
+         familyi={S\bibinitperiod},
+         given={M.\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=DWH}{%
+         family={Daffer},
+         familyi={D\bibinitperiod},
+         given={W.\bibnamedelima H.},
+         giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=DBJ}{%
+         family={Drouin},
+         familyi={D\bibinitperiod},
+         given={B.\bibnamedelima J.},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=CRE}{%
+         family={Cofield},
+         familyi={C\bibinitperiod},
+         given={R.\bibnamedelima E.},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=CDT}{%
+         family={Cuddy},
+         familyi={C\bibinitperiod},
+         given={D.\bibnamedelima T.},
+         giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=JRF}{%
+         family={Jarnot},
+         familyi={J\bibinitperiod},
+         given={R.\bibnamedelima F.},
+         giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=KBW}{%
+         family={Knosp},
+         familyi={K\bibinitperiod},
+         given={B.\bibnamedelima W.},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=PVS}{%
+         family={Perun},
+         familyi={P\bibinitperiod},
+         given={V.\bibnamedelima S.},
+         giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=SWV}{%
+         family={Snyder},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima V.},
+         giveni={W\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=SPC}{%
+         family={Stek},
+         familyi={S\bibinitperiod},
+         given={P.\bibnamedelima C.},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=TRP}{%
+         family={Thurstans},
+         familyi={T\bibinitperiod},
+         given={R.\bibnamedelima P.},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=WPA}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={P.\bibnamedelima A.},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \keyw{validation, ozone, Aura MLS}
+    \strng{namehash}{FL+1}
+  \strng{fullhash}{FLJYBLALNJRWGWJWBEVHJWAMAMTJTLWSGKJKWMJJSBSRATGCBPFBCDWKAFMJHRSFRAMGLSMJDWHDBJCRECDTJRFKBWPVSSWVSPCTRPWPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{D15S20}
+    \field{title}{Validation of Aura Microwave Limb Sounder stratospheric ozone
+  measurements}
+    \field{volume}{113}
+    \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+    \field{year}{2008}
+  \endentry
+
+  \entry{gordon2022hitran2020}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{10}{}{%
+      {{hash=GIE}{%
+         family={Gordon},
+         familyi={G\bibinitperiod},
+         given={I.\bibnamedelima E},
+         giveni={I\bibinitperiod\bibinitdelim E},
+      }}%
+      {{hash=RLS}{%
+         family={Rothman},
+         familyi={R\bibinitperiod},
+         given={L.\bibnamedelima S.},
+         giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Hargreaves},
+         familyi={H\bibinitperiod},
+         given={RJ},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Hashemi},
+         familyi={H\bibinitperiod},
+         given={R},
+         giveni={R},
+      }}%
+      {{hash=KEV}{%
+         family={Karlovets},
+         familyi={K\bibinitperiod},
+         given={Ekaterina\bibnamedelima Vladimirovna},
+         giveni={E\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Skinner},
+         familyi={S\bibinitperiod},
+         given={FM},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=CEK}{%
+         family={Conway},
+         familyi={C\bibinitperiod},
+         given={Eamon\bibnamedelima K},
+         giveni={E\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Hill},
+         familyi={H\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=KRV}{%
+         family={Kochanov},
+         familyi={K\bibinitperiod},
+         given={Roman\bibnamedelima V},
+         giveni={R\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=TY}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Y},
+         giveni={Y},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{GIE+1}
+    \strng{fullhash}{GIERLSHRHRKEVSFCEKHCKRVTY+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{The HITRAN2020 molecular spectroscopic database}
+    \field{volume}{277.107949}
+    \field{journaltitle}{Journal of Quantitative Spectroscopy and Radiative
+  Transfer}
+    \field{year}{2022}
+  \endentry
+
+  \entry{kaipio2005statinv}{book}{}
+    \name{author}{2}{}{%
+      {{hash=KJP}{%
+         family={Kaipio},
+         familyi={K\bibinitperiod},
+         given={Jari\bibnamedelima P.},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Somersalo},
+         familyi={S\bibinitperiod},
+         given={Erkki},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag New York}%
+    }
+    \strng{namehash}{KJPSE1}
+    \strng{fullhash}{KJPSE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Statistical and Computational Inverse Problems}
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{2005}
+  \endentry
+
+  \entry{Lee2020NightOzone}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LJN}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Jae\bibnamedelima N.},
+         giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=WDL}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Dong\bibnamedelima L.},
+         giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \keyw{mesospheric ozone, solar cycle, carbon monoxide, oxygen, UV, eddy
+  diffusion}
+    \strng{namehash}{LJNWDL1}
+    \strng{fullhash}{LJNWDL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{4}
+    \field{title}{Solar cycle modulation of nighttime ozone near the mesopause
+  as observed by MLS}
+    \field{volume}{7}
+    \field{journaltitle}{Earth and Space Science}
+    \field{year}{2020}
+  \endentry
+
+  \entry{livesey2008ozonecarbonmono}{article}{}
+    \name{author}{37}{}{%
+      {{hash=LNJ}{%
+         family={Livesey},
+         familyi={L\bibinitperiod},
+         given={Nathaniel\bibnamedelima J.},
+         giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=FMJ}{%
+         family={Filipiak},
+         familyi={F\bibinitperiod},
+         given={M.\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=FL}{%
+         family={Froidevaux},
+         familyi={F\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RWG}{%
+         family={Read},
+         familyi={R\bibinitperiod},
+         given={W.\bibnamedelima G.},
+         giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Lambert},
+         familyi={L\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SML}{%
+         family={Santee},
+         familyi={S\bibinitperiod},
+         given={M.\bibnamedelima L.},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=JJH}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={J.\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=PHC}{%
+         family={Pumphrey},
+         familyi={P\bibinitperiod},
+         given={H.\bibnamedelima C.},
+         giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=WJW}{%
+         family={Waters},
+         familyi={W\bibinitperiod},
+         given={J.\bibnamedelima W.},
+         giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=CRE}{%
+         family={Cofield},
+         familyi={C\bibinitperiod},
+         given={R.\bibnamedelima E.},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=CDT}{%
+         family={Cuddy},
+         familyi={C\bibinitperiod},
+         given={D.\bibnamedelima T.},
+         giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=DWH}{%
+         family={Daffer},
+         familyi={D\bibinitperiod},
+         given={W.\bibnamedelima H.},
+         giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=DBJ}{%
+         family={Drouin},
+         familyi={D\bibinitperiod},
+         given={B.\bibnamedelima J.},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=FRA}{%
+         family={Fuller},
+         familyi={F\bibinitperiod},
+         given={R.\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=JRF}{%
+         family={Jarnot},
+         familyi={J\bibinitperiod},
+         given={R.\bibnamedelima F.},
+         giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=JYB}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Y.\bibnamedelima B.},
+         giveni={Y\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=KBW}{%
+         family={Knosp},
+         familyi={K\bibinitperiod},
+         given={B.\bibnamedelima W.},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=LQB}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Q.\bibnamedelima B.},
+         giveni={Q\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=PVS}{%
+         family={Perun},
+         familyi={P\bibinitperiod},
+         given={V.\bibnamedelima S.},
+         giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=SMJ}{%
+         family={Schwartz},
+         familyi={S\bibinitperiod},
+         given={M.\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SWV}{%
+         family={Snyder},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima V.},
+         giveni={W\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=SPC}{%
+         family={Stek},
+         familyi={S\bibinitperiod},
+         given={P.\bibnamedelima C.},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=TRP}{%
+         family={Thurstans},
+         familyi={T\bibinitperiod},
+         given={R.\bibnamedelima P.},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=WPA}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={P.\bibnamedelima A.},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Avery},
+         familyi={A\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BEV}{%
+         family={Browell},
+         familyi={B\bibinitperiod},
+         given={E.\bibnamedelima V.},
+         giveni={E\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=CJP}{%
+         family={Cammas},
+         familyi={C\bibinitperiod},
+         given={J.-P.},
+         giveni={J\bibinithyphendelim P\bibinitperiod},
+      }}%
+      {{hash=CLE}{%
+         family={Christensen},
+         familyi={C\bibinitperiod},
+         given={L.\bibnamedelima E.},
+         giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=DGS}{%
+         family={Diskin},
+         familyi={D\bibinitperiod},
+         given={G.\bibnamedelima S.},
+         giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=GRS}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={R.-S.},
+         giveni={R\bibinithyphendelim S\bibinitperiod},
+      }}%
+      {{hash=JHJ}{%
+         family={Jost},
+         familyi={J\bibinitperiod},
+         given={H.-J.},
+         giveni={H\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Loewenstein},
+         familyi={L\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LJD}{%
+         family={Lopez},
+         familyi={L\bibinitperiod},
+         given={J.\bibnamedelima D.},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=NP}{%
+         family={Nedelec},
+         familyi={N\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=OGB}{%
+         family={Osterman},
+         familyi={O\bibinitperiod},
+         given={G.\bibnamedelima B.},
+         giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=SGW}{%
+         family={Sachse},
+         familyi={S\bibinitperiod},
+         given={G.\bibnamedelima W.},
+         giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=WCR}{%
+         family={Webster},
+         familyi={W\bibinitperiod},
+         given={C.\bibnamedelima R.},
+         giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \keyw{tropospheric composition, microwave, remote sounding}
+    \strng{namehash}{LNJ+1}
+  \strng{fullhash}{LNJFMJFLRWGLASMLJJHPHCWJWCRECDTDWHDBJFRAJRFJYBKBWLQBPVSSMJSWVSPCTRPWPAAMBEVCJPCLEDGSGRSJHJLMLJDNPOGBSGWWCR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{D15S02}
+    \field{title}{Validation of Aura Microwave Limb Sounder O3 and CO
+  observations in the upper troposphere and lower stratosphere}
+    \field{volume}{113}
+    \field{journaltitle}{Journal of Geophysical Research: Atmospheres}
+    \field{year}{2008}
+  \endentry
+
+  \entry{read2006forwardModel}{article}{}
+    \name{author}{5}{}{%
+      {{hash=RW}{%
+         family={Read},
+         familyi={R\bibinitperiod},
+         given={W.G.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Shippony},
+         familyi={S\bibinitperiod},
+         given={Z.},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Schwartz},
+         familyi={S\bibinitperiod},
+         given={M.J.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LNJ}{%
+         family={Livesey},
+         familyi={L\bibinitperiod},
+         given={Nathaniel\bibnamedelima J.},
+         giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=VSW}{%
+         family={Van\bibnamedelima Snyder},
+         familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RW+1}
+    \strng{fullhash}{RWSZSMLNJVSW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{5}
+    \field{pages}{1367\bibrangedash 1379}
+    \field{title}{The clear-sky unpolarized forward model for the EOS aura
+  microwave limb sounder (MLS)}
+    \field{volume}{44}
+    \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
+    \field{year}{2006}
+  \endentry
+
+  \entry{mipas2000handbook}{book}{}
+    \name{author}{1}{}{%
+      {{hash=RC}{%
+         family={Readings},
+         familyi={R\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ESA Publications Division}%
+    }
+    \strng{namehash}{RC1}
+    \strng{fullhash}{RC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Envisat MIPAS An Instrument for Atmospheric Chemistry and
+  Climate Research}
+    \list{location}{1}{%
+      {Noordwijk}%
+    }
+    \field{year}{2000}
+  \endentry
+
+  \entry{Ridolfi00}{article}{}
+    \name{author}{12}{}{%
+      {{hash=RM}{%
+         family={Ridolfi},
+         familyi={R\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CB}{%
+         family={Carli},
+         familyi={C\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Carlotti},
+         familyi={C\bibinitperiod},
+         given={Massimo},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=vCT}{%
+         prefix={von},
+         prefixi={v\bibinitperiod},
+         family={Clarmann},
+         familyi={C\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=DBM}{%
+         family={Dinelli},
+         familyi={D\bibinitperiod},
+         given={Bianca\bibnamedelima M.},
+         giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Dudhia},
+         familyi={D\bibinitperiod},
+         given={Anu},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FJM}{%
+         family={Flaud},
+         familyi={F\bibinitperiod},
+         given={Jean-Marie},
+         giveni={J\bibinithyphendelim M\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={H\"{o}pfner},
+         familyi={H\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MPE}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Paul\bibnamedelima E.},
+         giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Raspollini},
+         familyi={R\bibinitperiod},
+         given={Piera},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SG}{%
+         family={Stiller},
+         familyi={S\bibinitperiod},
+         given={Gabriele},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=WRJ}{%
+         family={Wells},
+         familyi={W\bibinitperiod},
+         given={Robert\bibnamedelima J.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Optica Publishing Group}%
+    }
+    \strng{namehash}{RM+1}
+    \strng{fullhash}{RMCBCMCTvDBMDAFJMHMMPERPSGWRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{8}
+    \field{pages}{1323\bibrangedash 1340}
+    \field{title}{Optimized forward model and retrieval scheme for MIPAS
+  near-real-time dataprocessing}
+    \field{volume}{39}
+    \field{journaltitle}{Applied Optics}
+    \field{month}{03}
+    \field{year}{2000}
+  \endentry
+
+  \entry{rue2005gaussian}{book}{}
+    \name{author}{2}{}{%
+      {{hash=RH}{%
+         family={Rue},
+         familyi={R\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HL}{%
+         family={Held},
+         familyi={H\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC Press}%
+    }
+    \strng{namehash}{RHHL1}
+    \strng{fullhash}{RHHL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Gaussian Markov Random Fields: Theory and Applications}
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{year}{2005}
+  \endentry
+
+  \entry{rybicki2000rte}{book}{}
+    \name{author}{2}{}{%
+      {{hash=RGB}{%
+         family={Rybicki},
+         familyi={R\bibinitperiod},
+         given={George\bibnamedelima B.},
+         giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=LAP}{%
+         family={Lightman},
+         familyi={L\bibinitperiod},
+         given={Alan\bibnamedelima P.},
+         giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley-VCH}%
+    }
+    \strng{namehash}{RGBLAP1}
+    \strng{fullhash}{RGBLAP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Radiative Processes in Astrophysics}
+    \list{location}{1}{%
+      {Weinheim}%
+    }
+    \field{year}{2004}
+  \endentry
+
+  \entry{MLSdata}{misc}{}
+    \name{author}{4}{}{%
+      {{hash=SM}{%
+         family={Schwartz},
+         familyi={S\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FL}{%
+         family={Froidevaux},
+         familyi={F\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=LN}{%
+         family={Livesey},
+         familyi={L\bibinitperiod},
+         given={Nathaniel},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RW}{%
+         family={Read},
+         familyi={R\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{organization}{2}{%
+      {NASA Goddard Earth Sciences Data}%
+      {Information Services Center}%
+    }
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMFLLNRW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+  \field{howpublished}{\url{https://disc.gsfc.nasa.gov/datasets/ML2O3_005/summary?keywords=mls\%20o3}}
+    \field{note}{[Online; accessed 25/04/24]}
+    \field{title}{MLS/Aura Level 2 Ozone (O3) Mixing Ratio V005}
+    \field{year}{2020}
+  \endentry
+
+  \entry{vsimevckova2006einstein}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SM}{%
+         family={{\v{S}}ime{\v{c}}kov{\'a}},
+         familyi={{\v{S}}\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Jacquemart},
+         familyi={J\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RLS}{%
+         family={Rothman},
+         familyi={R\bibinitperiod},
+         given={L.\bibnamedelima S.},
+         giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=GRR}{%
+         family={Gamache},
+         familyi={G\bibinitperiod},
+         given={R.\bibnamedelima R.},
+         giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Goldman},
+         familyi={G\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{SM+2}
+    \strng{fullhash}{SMJDRLSGRRGA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{1}
+    \field{pages}{130\bibrangedash 155}
+    \field{title}{Einstein A-coefficients and statistical weights for molecular
+  absorption transitions in the HITRAN database}
+    \field{volume}{98}
+    \field{journaltitle}{Journal of Quantitative Spectroscopy and Radiative
+  Transfer}
+    \field{year}{2006}
+  \endentry
+
+  \entry{SIMPSON201216}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SD}{%
+         family={Simpson},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Lindgren},
+         familyi={L\bibinitperiod},
+         given={Finn},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Rue},
+         familyi={R\bibinitperiod},
+         given={Håvard},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SDLFRH1}
+    \strng{fullhash}{SDLFRH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{16\bibrangedash 29}
+    \field{title}{Think continuous: Markovian Gaussian models in spatial
+  statistics}
+    \field{volume}{1}
+    \field{journaltitle}{Spatial Statistics}
+    \field{year}{2012}
+  \endentry
+
+  \entry{atmosphere1976us}{book}{}
+    \list{publisher}{2}{%
+      {United States. National Oceanic}%
+      {Atmospheric Administration, United States Committee on Extension to the
+  Standard Atmosphere}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{title}{U.{S}. {Standard} {Atmosphere}, 1976}
+    \list{location}{1}{%
+      {Washington, D.C.}%
+    }
+    \field{year}{1976}
+  \endentry
+
+  \entry{wang2015graphs}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WYX}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yu-Xiang},
+         giveni={Y\bibinithyphendelim X\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sharpnack},
+         familyi={S\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SAJ}{%
+         family={Smola},
+         familyi={S\bibinitperiod},
+         given={Alexander\bibnamedelima J.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=TRJ}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Ryan\bibnamedelima J.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WYX+1}
+    \strng{fullhash}{WYXSJSAJTRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{105}
+    \field{pages}{1\bibrangedash 41}
+    \field{title}{Trend filtering on graphs}
+    \field{volume}{17}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2016}
+  \endentry
+
+  \entry{waters2006earth}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{10}{}{%
+      {{hash=WJ}{%
+         family={Waters},
+         familyi={W\bibinitperiod},
+         given={Joe},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FL}{%
+         family={Froidevaux},
+         familyi={F\bibinitperiod},
+         given={Lucien},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=HRS}{%
+         family={Harwood},
+         familyi={H\bibinitperiod},
+         given={Robert\bibnamedelima S},
+         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=JRF}{%
+         family={Jarnot},
+         familyi={J\bibinitperiod},
+         given={Robert\bibnamedelima F},
+         giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=PHM}{%
+         family={Pickett},
+         familyi={P\bibinitperiod},
+         given={Herbert\bibnamedelima M},
+         giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=RWG}{%
+         family={Read},
+         familyi={R\bibinitperiod},
+         given={William\bibnamedelima G},
+         giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=SPH}{%
+         family={Siegel},
+         familyi={S\bibinitperiod},
+         given={Peter\bibnamedelima H},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=CRE}{%
+         family={Cofield},
+         familyi={C\bibinitperiod},
+         given={Richard\bibnamedelima E},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=FMJ}{%
+         family={Filipiak},
+         familyi={F\bibinitperiod},
+         given={Mark\bibnamedelima J},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=FDA}{%
+         family={Flower},
+         familyi={F\bibinitperiod},
+         given={Dennis\bibnamedelima A},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{WJ+1}
+    \strng{fullhash}{WJFLHRSJRFPHMRWGSPHCREFMJFDA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{5}
+    \field{pages}{1075\bibrangedash 1092}
+    \field{title}{The earth observing system microwave limb sounder (EOS MLS)
+  on the Aura satellite}
+    \field{volume}{44}
+    \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
+    \field{year}{2006}
+  \endentry
+\enddatalist
+\endinput

@@ -1,0 +1,87 @@
+%% Creator: Inkscape 1.2.2 (1:1.2.2+202212051552+b0a8486541), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'LIMB.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{421bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.30166271)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{LIMB.pdf}}%
+    \put(0.42690846,0.13808244){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\phi_j$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{LIMB.pdf}}%
+    \put(0.82212824,0.12102016){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{L,n}\approx83$km\end{tabular}}}}%
+    \put(0.71421526,0.07059122){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{L,i}$\end{tabular}}}}%
+    \put(0.70306414,0.01769629){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{L,0}\approx7$km\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{LIMB.pdf}}%
+    \put(0.89183462,0.20018385){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{\text{sat}}=500$km\end{tabular}}}}%
+    \put(0.62898641,0.13204137){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Gamma_j$\end{tabular}}}}%
+    \put(0.73031697,0.0964654){\color[rgb]{0,0,0}\rotatebox{44.665751}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\cdots$\end{tabular}}}}}%
+    \put(0.67630688,0.04831459){\color[rgb]{0,0,0}\rotatebox{44.988095}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\cdots$\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{LIMB.pdf}}%
+    \put(0.1849475,0.1635572){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Satellite\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{LIMB.pdf}}%
+    \put(0.37383159,0.01645802){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{LIMB.pdf}}%
+    \put(0.23962403,0.06898776){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}n\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{LIMB.pdf}}%
+    \put(0.30284077,0.04073868){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}i\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{LIMB.pdf}}%
+    \put(0.45270646,0.0084668){\color[rgb]{0.72156863,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}{\color{white}EARTH}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{LIMB.pdf}}%
+    \put(0.47131607,0.19216801){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{LIMB.pdf}}%
+    \put(0.49852211,0.14296276){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}j\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{LIMB.pdf}}%
+    \put(0.52751071,0.09156038){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{LIMB.pdf}}%
+    \put(0.09078824,0.11096367){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{LIMB.pdf}}%
+  \end{picture}%
+\endgroup%
