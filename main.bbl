@@ -77,40 +77,6 @@
     \field{year}{2022}
   \endentry
 
-  \entry{Dick_Kuo_Sloan_2013}{article}{}
-    \name{author}{3}{}{%
-      {{hash=DJ}{%
-         family={Dick},
-         familyi={D\bibinitperiod},
-         given={Josef},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=KFY}{%
-         family={Kuo},
-         familyi={K\bibinitperiod},
-         given={Frances\bibnamedelima Y.},
-         giveni={F\bibinitperiod\bibinitdelim Y\bibinitperiod},
-      }}%
-      {{hash=SIH}{%
-         family={Sloan},
-         familyi={S\bibinitperiod},
-         given={Ian\bibnamedelima H.},
-         giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{DJKFYSIH1}
-    \strng{fullhash}{DJKFYSIH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{pages}{133\bibrangedash 288}
-    \field{title}{High-dimensional integration: The quasi-Monte Carlo way}
-    \field{volume}{22}
-    \field{journaltitle}{Acta Numerica}
-    \field{year}{2013}
-  \endentry
-
   \entry{fox2016fast}{article}{}
     \name{author}{2}{}{%
       {{hash=FC}{%
@@ -1240,6 +1206,82 @@
     \field{volume}{44}
     \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
     \field{year}{2006}
+  \endentry
+
+  \entry{wolff2004monte}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WU}{%
+         family={Wolff},
+         familyi={W\bibinitperiod},
+         given={U.},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{WU1}
+    \strng{fullhash}{WU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{2}
+    \field{pages}{143\bibrangedash 153}
+    \field{title}{Monte Carlo errors with less errors}
+    \field{volume}{156}
+    \field{journaltitle}{Computer Physics Communications}
+    \field{year}{2004}
+  \endentry
+
+  \entry{wolff2002LecNot}{misc}{}
+    \name{author}{5}{}{%
+      {{hash=WU}{%
+         family={Wolﬀ},
+         familyi={W\bibinitperiod},
+         given={Ulli},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=hBB}{%
+         prefix={hard},
+         prefixi={h\bibinitperiod},
+         family={Bunk},
+         familyi={B\bibinitperiod},
+         given={Burk},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Korzec},
+         familyi={K\bibinitperiod},
+         given={Tomasz},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KF}{%
+         family={Knechtli},
+         familyi={K\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BO}{%
+         family={B{\"a}r},
+         familyi={B\bibinitperiod},
+         given={Oliver},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Humboldt University, Berlin}%
+    }
+    \strng{namehash}{WU+1}
+    \strng{fullhash}{WUBBhKTKFBO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+  \field{howpublished}{\url{https://www.physik.hu-berlin.de/de/com/teachingandseminars/previousCPII}}
+    \field{note}{[Online; accessed 29/08/25]}
+    \field{title}{Lecture Notes on Computational Physics II [in german]}
+    \field{year}{2016}
   \endentry
 \enddatalist
 \endinput

@@ -7,7 +7,8 @@
 \usepackage{caption}
 \captionsetup[table]{position=bottom} 
 \usepackage{array, makecell}
-
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 
 \usepackage{tikz}
@@ -118,7 +119,7 @@ and the inner expectation $\mathbb{E}_{\bm{x} |  \bm{\theta}, \bm{y}} \left[ h(\
 If the integral in Eq.~\ref{eq:2fullCond} is expensive to calculate  sample-based methods may be used to calculate the expectations in 
 Eq.~\eqref{eq:2fullCond}.
 To produce a samples $\{ (\bm{x}, \bm{\theta})^{(1)}, \dots, (\bm{x}, \bm{\theta})^{(k)}, \dots, (\bm{x}, \bm{\theta})^{(N)} \} \sim \pi(\bm{x}, \bm{\theta} |  \bm{y}) $ one needs an independent an sample from $\bm{\theta}^{(k)} \sim \pi(\bm{\theta} |  \bm{y})$ first and then draw a sample from the full conditional posterior $\bm{x}^{(k)} \sim \pi(\bm{x} | \bm{\theta}^{(k)}  , \bm{y})$.
-
+\clearpage
 
 \section{The Forward Model}
 \label{ch:formodel}
@@ -280,6 +281,7 @@ The integral in Eq.~\eqref{eq:RTE} is evaluated using the trapezoidal rule and e
 Since neglecting the absorption changes the measurements only slightly (about $1\%$, see Sec.~\ref{sec:affine}), we classify the inverse problem as a weakly non-linear inverse problem.
 Note that the methods used here will work with different SNRs or other frequencies.
 
+\clearpage
 \section{Hierarchical Bayesian Model}
 \label{sec:BayModel}
 
@@ -293,24 +295,24 @@ We plot statistical dependencies as solid arrows and deterministic dependencies 
 \label{subsec:PriorFull}
 \begin{figure}[ht!]
 	\centering
-	%\input{TrueTemp.pdf_tex}
+	\input{TrueTemp.pdf_tex}
 	%\includegraphics{PriorTempPostMeanSigm.png}
 	\caption[Prior Samples of $\bm{T}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $\bm{h}_T$, $\bm{a}$ and $T_0$, as defined in Tab.~\ref{tab:priors}, where we calculate $\bm{T}$ according to the function in Eq.~\ref{eq:tempFunc}.}
 	\label{fig:PriorTemp}
 \end{figure}
 \begin{figure}[ht!]
 	\centering
-	%\input{TruePress.pdf_tex}
+	\input{TruePress.pdf_tex}
 	%\includegraphics{PriorPressPostMeanSigm.png}
 	\caption[Prior Samples of $\bm{p}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $b$ and $p_0$ as defined in Tab.~\ref{tab:priors}, where we calculate $\bm{p}$ according to the function in Eq.~\ref{eq:pressFunc}.}
 	\label{fig:PriorPress}
 \end{figure}
-\begin{figure}[ht!]
-	\centering
-	%\includegraphics{PriorTempOverPostMeanSigm.png}
-	\caption[Prior Samples of $\bm{p}/\bm{T}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $\bm{h}_T$, $\bm{a}$ and $T_0$ for temperature as in Eq.~\ref{eq:tempFunc} and $b$ and $p_0$ for pressure as in Eq.~\ref{eq:pressFunc}. We plot $\bm{p}/\bm{T}$. The hyper-priors are defined in Tab.~\ref{tab:priors}.}
-	\label{fig:PriorPressOverTemp}
-\end{figure}
+%\begin{figure}[ht!]
+%	\centering
+%	%\includegraphics{PriorTempOverPostMeanSigm.png}
+%	\caption[Prior Samples of $\bm{p}/\bm{T}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $\bm{h}_T$, $\bm{a}$ and $T_0$ for temperature as in Eq.~\ref{eq:tempFunc} and $b$ and $p_0$ for pressure as in Eq.~\ref{eq:pressFunc}. We plot $\bm{p}/\bm{T}$. The hyper-priors are defined in Tab.~\ref{tab:priors}.}
+%	\label{fig:PriorPressOverTemp}
+%\end{figure}
 We observe that the pressure $\bm{p}$ in between $h_{L,0} \approx 7$km and $h_{L,n} \approx 83$km can be described with an exponential function
 \begin{align}
 	p(h) =
@@ -340,7 +342,7 @@ In Fig.~\ref{fig:PriorPressOverTemp} we already observe that $\bm{p}/\bm{T}$ inh
 	\begin{tikzpicture}
 		\node[roundnode2] at (-4.5,6.5) (Q)     {$\bm{Q}$};
 		\node[roundnode2] at (-3,5) (x)     {$\bm{x}$};
-		\node[align=center] at (-1,3.75) (A)    {$\bm{A}_{\bm{\theta}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$};
+		\node[align=center] at (-1,3.75) (A)    {$\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$};
 		\node[roundnode2] at (-1,2.5) (u)    {$\Omega$};
 		\node[rectnode] at (-1,1) (y)    {$\bm{y}$};
 		\node[roundnode2] at (-3,2.5) (e)    {$\bm{\eta}$};
@@ -411,7 +413,7 @@ In Fig.~\ref{fig:PriorPressOverTemp} we already observe that $\bm{p}/\bm{T}$ inh
 		As previously described in Sec.~\ref{sec:BayModelO3}, $\bm{\theta}_{\gamma}, \bm{\theta}_{\delta}$ determine gamma distributions e.g., $\gamma \sim \mathcal{T}(\alpha_{\gamma},\beta_{\gamma}) $ with $\bm{\theta}_{\gamma} = 	\{\alpha_{\gamma},\beta_{\gamma} \}$.
 		The ozone parameter $\bm{x}$ is statistically (solid line) described by the prior distribution $\bm{x}| \delta \sim \mathcal{N}(0,(\delta \bm{L})^{-1}) $. 
 		Here, the hyper-parameter $\delta$ accounts for smoothness in the ozone profile and defines the precision matrix $\bm{Q} = \delta \bm{L}$ as in Eq.~\ref{eq:GLapl}.
-		The approximated forward model $\bm{A}_{\bm{\theta}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$ with $\bm{\theta}  \coloneqq \{p_0, b, T_0,\bm{h}_T,\bm{a} \}$ maps the parameter and hyper-parameters to a space of all measurables $\Omega$. 
+		The approximated forward model $\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$ with $\bm{\Phi}  \coloneqq \{p_0, b, T_0,\bm{h}_T,\bm{a} \}$ maps the parameter and hyper-parameters to a space of all measurables $\Omega$. 
 		From that space, a data set $\bm{y}$ including some additive random noise $\bm{\eta}$ is observed (square box).
 		The noise covariance $\bm{\Sigma} = \gamma^{-1} \bm{I}$ of the random noise vector $\bm{\eta} \sim \mathcal{N}(0,\gamma^{-1} \bm{I} ) $ is defined by the hyper-parameter $\gamma$.}
 	%Given the data we like to determine the marginal posterior distribution over the hyper-parameters $\pi(\bm{\theta}, \delta, \gamma | \bm{y})$ first and then the conditional posterior distribution for ozone $\pi(\bm{x}|\bm{\theta}, \delta, \gamma, \bm{y})$, utilising the MTC scheme.}
@@ -425,15 +427,15 @@ Note that other variables in the RTE, such as the internal partition function an
 From $\Omega$ we observe (square box) some data with additive normally distributed noise $\bm{\eta}$.
 For brevity, we define the linear forward model matrix as
 \begin{align}
-\bm{A}_{\bm{\theta}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a}) 
+\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a}) 
 \end{align}
-with $\bm{\theta}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$ accounting for the all pressure and temperature related hyper-parameters and $\bm{M}$ the affine approximation from the previous Chapter.
+with $\bm{\Phi}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$ accounting for the all pressure and temperature related hyper-parameters and $\bm{M}$ the affine approximation from the previous Chapter.
 
 The distributions of the hierarchical Bayesian framework are:
 \begin{subequations}
 \label{eq:BayMode}
 \begin{align}
-	\bm{y} |  \bm{x},\bm{\theta},\delta,\gamma  &\sim \mathcal{N}(\bm{A}_{\bm{\theta}}  \bm{x}, \gamma^{-1} \bm{I}) \label{eq:likelihoodFull} \\
+	\bm{y} |  \bm{x},\bm{\Phi},\delta,\gamma  &\sim \mathcal{N}(\bm{A}_{\bm{\Phi}}  \bm{x}, \gamma^{-1} \bm{I}) \label{eq:likelihoodFull} \\
 	\bm{x}| \delta  &\sim \mathcal{N}(\bm{0}, (\delta \bm{L})^{-1} ) \label{eq:priorXFull} \\
 	\delta  &\sim \mathcal{T}(\alpha_{\delta} , \beta_{\delta} )\label{eq:priorDelFull} \\
 	\gamma  &\sim \mathcal{T}(\alpha_{\gamma}, \beta_{\gamma})\label{eq:priorGamFull} \\
@@ -444,31 +446,31 @@ The distributions of the hierarchical Bayesian framework are:
 	b  &\sim \mathcal{N}(\mu_b, \sigma^2_b )  \label{eq:lastprior}  \, .
 \end{align}
 \end{subequations}
-Due to Gaussian noise $\pi(\bm{y} |  \bm{x},\bm{\theta},\delta,\gamma )$ is a normally distributed likelihood function and Eq.~\ref{eq:priorXFull} to Eq.~\ref{eq:lastprior} denote prior distributions.
+Due to Gaussian noise $\pi(\bm{y} |  \bm{x},\bm{\Phi},\delta,\gamma )$ is a normally distributed likelihood function and Eq.~\ref{eq:priorXFull} to Eq.~\ref{eq:lastprior} denote prior distributions.
 Before formulating the posterior distribution, we carefully define $\bm{\theta}_{\gamma}, \bm{\theta}_{\delta},\bm{\theta}_{p_0},\bm{\theta}_{b},\bm{\theta}_{\bm{h}},\bm{\theta}_{T_0},\bm{\theta}_{\bm{a}}$, the hyper-prior scales, shapes, means and variances, which are explicitly given in Tab.~\ref{tab:priors}.
 
+We define the hyper-parameters as $\bm{\theta} = \{ \bm{\Phi}, \gamma, \delta \}$
 
 %Note that we fit one exponential function to ground truth pressure values between $h_{L,0} \approx 7$km and $h_{L,n} \approx 82$, so that the pressure value $p_0$ may be different to true sea-level pressure values at $h = 0$km due to that approximation.
 \section{Posterior Distribution}
 Here, the marginal posterior and the full conditional posterior distribution for the described Bayesian model are formulated.
-We either use the t-walk algorithm~\cite{christen2010general} to draw samples from the marginal posterior $\pi(p_0,b,T_0,\bm{h_T},\bm{a} ,\lambda, \gamma| \bm{y})$ with $\lambda = \delta / \gamma$ or we utilise a TT approximation on a predefined grid to generate samples via the SIRT method with an MH correction step.
+We either use the t-walk algorithm~\cite{christen2010general} to draw samples from the marginal posterior $\pi(p_0,b,T_0,\bm{h_T},\bm{a} ,\delta, \gamma| \bm{y})$ or we utilise a TT approximation on a predefined grid to generate samples via the SIRT method with an MH correction step.
 In doing so, the reader is guided through the process of obtaining an efficient  higher-dimensional TT approximation.
-Lastly, the RTO method is utilised to draw ozone samples from the full conditional posterior $\pi(\bm{x}|p_0,b,T_0,\bm{h_T},\bm{a} ,\lambda, \gamma, \bm{y})$.
-Recall that $\bm{x} \in \mathbb{R}^n$ with $n = 34$ and $\bm{y} \in \mathbb{R}^m$ with $m = 30$, and that the linear forward model matrix $\bm{A}_{\bm{\theta}}$ is depending on the hyper-parameter defined as $\bm{\theta}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$.
-Consequently, the marginal posterior is denoted as $\pi( \bm{\theta},\lambda,\gamma  | \bm{y}) $ and the full conditional posterior as $\pi(\bm{x}|\bm{\theta}, \lambda, \gamma, \bm{y})$.
+Lastly, the RTO method is utilised to draw ozone samples from the full conditional posterior $\pi(\bm{x}|p_0,b,T_0,\bm{h_T},\bm{a} ,\delta, \gamma, \bm{y})$.
+Recall that $\bm{x} \in \mathbb{R}^n$ with $n = 34$ and $\bm{y} \in \mathbb{R}^m$ with $m = 30$, and that the linear forward model matrix $\bm{A}_{\bm{\Phi}}$ is depending on the hyper-parameter defined as $\bm{\Phi}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$.
+Consequently, the marginal posterior is denoted as $\pi( \bm{\Phi},\delta,\gamma  | \bm{y}) $ and the full conditional posterior as $\pi(\bm{x}|\bm{\Phi}, \delta, \gamma, \bm{y})$.
 \begin{table}[ht!]
 \centering
-\begin{tabular}{ |c||c|c|c|c|c|   }
+\begin{tabular}{ |c||c|c|c|c|  }
 	\hline
 	& &\multicolumn{2}{|c|}{TT bounds}& \\
 	\hline
 	model parameters& priors&\makecell{lower}& \makecell{upper\\
 	}&Context\\
-	\hhline{|=||=|=|=|=|=|}
+	\hhline{|=||=|=|=|=|}
 	$\bm{x}$ &$\mathcal{N}(0,(\delta \bm{L})^{-1})$ & -&-& $\bm{x}$\\ \hline
 	$\delta$ &$\mathcal{T}(1,10^{-35})$ & -&-& $\bm{x}$\\ \hline
 	$\gamma$ & $\mathcal{T}(1,10^{-35})$ &$8\times10^{14}$ &$1.2\times10^{16}$& $\bm{y}$\\ \hline
-	$\lambda  = \delta / \gamma$ &- & $1\times10^{-5}$&$2.5\times10^{-3}$& -\\ \hline
 	$b$ &  $\mathcal{N}(0.174,(0.01)^2)$& 0.129& 0.214 &$\bm{p}$\\ \hline
 	$h_{T,1}$ &  $\mathcal{N}(11,(1.5)^2)$&5.4 &16.3&$\bm{T}$\\ \hline
 	$T_{0}$ &  $\mathcal{N}(288.15,(10)^2)$& 247 &326&$\bm{T}$\\ \hline
@@ -502,7 +504,7 @@ with $\lambda= \delta / \gamma$,
 \begin{subequations}
 \label{eq:fandgTrue}
 \begin{align}
-	&f ( \bm{\theta},\lambda) = \bm{y}^T \bm{y} - \big(\bm{A}_{\bm{\theta}}^T \bm{y}\big)^T \big(\bm{A}_{\bm{\theta}}^T  \bm{A}_{\bm{\theta}} + \lambda \bm{L}\big)^{-1} \big(\bm{A}_{\bm{\theta}}^T \bm{y}\big)  \label{eq:fFullAppl} \, ,  \\
+	&f ( \bm{\Phi},\lambda) = \bm{y}^T \bm{y} - \big(\bm{A}_{\bm{\Phi}}^T \bm{y}\big)^T \big(\bm{A}_{\bm{\Phi}}^T  \bm{A}_{\bm{\Phi}} + \lambda \bm{L}\big)^{-1} \big(\bm{A}_{\bm{\theta}}^T \bm{y}\big)  \label{eq:fFullAppl} \, ,  \\
 	&\text{and } g(\bm{\theta},\lambda) = \log \det \big(\bm{A}_{\bm{\theta}}^T  \bm{A}_{\bm{\theta}} + \lambda \bm{L}\big) \label{eq:gFullAppl} \, .
 \end{align}
 \end{subequations}
@@ -548,7 +550,25 @@ is a normal distribution with $\lambda = \delta / \gamma $ and samples can be dr
 
 \section{Results}
 
-\subsubsection{Finding an Affine Map}
+\subsection{Linear Forward Model}
+\begin{itemize}
+	\item marginal posterior
+	\item TT set up and IACT
+	\item conditional posterior for affine map
+\end{itemize}
+In theory, this scheme provides independent samples, but in practice, every system produces correlated samples.
+To assess how efficient this scheme is, we define the Integrated Autocorrelation Times (IACT)
+\begin{align}
+	\tau_{\text{int}}  \coloneqq  \Bigg(  1 + 2 \sum_{t = 1}^{W} \frac{\Gamma(t)}{\Gamma(0)}  \Bigg)  
+\end{align} 
+as in \cite{fox2016fast} with an autocorrelation coefficient $\Gamma(t)$.
+This is twice the value of the IACT in~\cite[pp. 103-105]{wolff2002LecNot} and~\cite{wolff2004monte,drikHesse}, as commonly defined within the physics community.
+U. Wolff~\cite{wolff2004monte} (and the Python implementation by D. Hesse~\cite{drikHesse}) provide a way to not only calculate the IACT safely but also to quantify the errors of the estimated IACT.
+The IATCs are $\tau_{\text{int},\lambda} = 1.05\pm0.04$ and $\tau_{\text{int},\gamma} =0.99\pm0.03$ based on a chain with 10000 samples.
+So every second sample via the IRT scheme presents an independent marginal posterior sample.
+Conditioned on an independent sample from the marginal posterior, one can draw an independent sample from the full conditional posterior.
+
+\subsection{Finding an Affine Map}
 \label{sec:affine}
 We find an affine map by creating the vector spaces $\bm{W}$ based on the linear forward model and $\bm{V}$ based on the non-linear forward model with ground truth pressure and temperature.
 More specifically $m-1$ samples $\bm{x}^{(j)} \sim \pi_{\bm{x}}(\cdot|\delta^{(j)} , \gamma^{(j)},\bm{y})$, for $j = 2, \dots,m$, from the posterior and the posterior mean $\bm{\mu}_{\bm{x}|\bm{y}}$ generate,
@@ -618,15 +638,19 @@ Consequently, from here onwards the approximated forward map is used.
 This takes $\approx 0.1$s.
 
 
+\subsection{Approximated Forward Model}
 
-
-
+\begin{itemize}
+	\item marginal posterior same TT setup
+	\item conditional posterior
+	\item plot results
+\end{itemize}
 \clearpage
 \section{Conclusion}
 \begin{itemize}
-    \item
-    \item 
-    \item
+    \item TT approximation vs conventional sampler cite Rosenthal for IACT
+    \item Pressure Ozone correlation
+    \item 2nd Ozone peak not included 
 \end{itemize}
 \clearpage
 % {\renewcommand*\MakeUppercase[1]{#1}%
