@@ -1125,6 +1125,47 @@
     \field{year}{1976}
   \endentry
 
+  \entry{wang2015graphs}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WYX}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yu-Xiang},
+         giveni={Y\bibinithyphendelim X\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sharpnack},
+         familyi={S\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SAJ}{%
+         family={Smola},
+         familyi={S\bibinitperiod},
+         given={Alexander\bibnamedelima J.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=TRJ}{%
+         family={Tibshirani},
+         familyi={T\bibinitperiod},
+         given={Ryan\bibnamedelima J.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WYX+1}
+    \strng{fullhash}{WYXSJSAJTRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{105}
+    \field{pages}{1\bibrangedash 41}
+    \field{title}{Trend filtering on graphs}
+    \field{volume}{17}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2016}
+  \endentry
+
   \entry{waters2006earth}{article}{}
     \true{moreauthor}
     \true{morelabelname}

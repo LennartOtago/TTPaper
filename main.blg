@@ -24,45 +24,45 @@ Warning--I didn't find a database entry for "UwerrM"
 Biblatex version: 3.17
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 22 entries,
+You've used 23 entries,
             6399 wiz_defined-function locations,
-            1341 strings with 14663 characters,
-and the built_in function-call counts, 413502 in all, are:
-= -- 39568
-> -- 3456
-< -- 987
-+ -- 12718
-- -- 1412
-* -- 31820
-:= -- 52178
+            1348 strings with 14826 characters,
+and the built_in function-call counts, 426418 in all, are:
+= -- 40714
+> -- 3594
+< -- 1021
++ -- 13069
+- -- 1475
+* -- 32909
+:= -- 53731
 add.period$ -- 0
-call.type$ -- 22
-change.case$ -- 611
+call.type$ -- 23
+change.case$ -- 621
 chr.to.int$ -- 54
-cite$ -- 42
-duplicate$ -- 37591
-empty$ -- 34380
-format.name$ -- 2469
-if$ -- 81477
+cite$ -- 44
+duplicate$ -- 38727
+empty$ -- 35497
+format.name$ -- 2561
+if$ -- 84078
 int.to.chr$ -- 0
-int.to.str$ -- 61
+int.to.str$ -- 63
 missing$ -- 0
-newline$ -- 1272
-num.names$ -- 1276
-pop$ -- 9492
+newline$ -- 1313
+num.names$ -- 1317
+pop$ -- 9880
 preamble$ -- 1
-purify$ -- 907
+purify$ -- 925
 quote$ -- 0
-skip$ -- 5259
+skip$ -- 5451
 stack$ -- 0
-substring$ -- 83188
-swap$ -- 4865
-text.length$ -- 732
-text.prefix$ -- 24
+substring$ -- 85633
+swap$ -- 5047
+text.length$ -- 769
+text.prefix$ -- 25
 top$ -- 1
-type$ -- 736
+type$ -- 770
 warning$ -- 0
-while$ -- 5652
+while$ -- 5814
 width$ -- 0
-write$ -- 1251
+write$ -- 1291
 (There were 2 warnings)

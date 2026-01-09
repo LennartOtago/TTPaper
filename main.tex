@@ -284,15 +284,33 @@ Note that the methods used here will work with different SNRs or other frequenci
 \clearpage
 \section{Hierarchical Bayesian Model}
 \label{sec:BayModel}
-
-Here this inverse problem is treated as a linear inverse problem by neglecting the absorption term in the RTE (see Eq.~\ref{eq:RTE}).
-The reader is guided through the process of setting up a hierarchical Bayesian frameworka and establishing a choice of prior distributions.
-Applying the MTC scheme, we explicitly formulate the respective posterior distributions.
+Here a hierarchical Bayesian model is developed where the forward model is described by either $\bm{A}_L$ the linearised RTE  (see Eq.~\ref{eq:RTE}) or by the approximation $\bm{M} \bm{A}_L$ to the non-linear RTE, where $\bm{M}$ is an affine map.
+Parameters and hyper-parameter are classified and a choice of prior distributions is established.
 A directed acyclic graph (DAG) is used to visualise conditional dependencies between hyper-parameters and the parameter (see Fig.~\ref{fig:DAGO3}), as well as how distributions progress through to an observation (square box). 
 We plot statistical dependencies as solid arrows and deterministic dependencies as dotted arrows.
+Then, applying the MTC scheme, we explicitly formulate the respective posterior distributions.
 
 \subsection{Prior Modelling}
 \label{subsec:PriorFull}
+First we describe the ozone parameter trough normally distributed prior $\bm{x}| \delta \sim \mathcal{N}(0, \bm{Q}^{-1}) $ with zero mean and no other restrictions, it is clear that our model does not take into account that ozone values cannot be negative.
+The precision matrix of that prior distribution is
+\begin{align}
+	\bm{Q} = \delta \bm{L} =
+	\delta
+	\begin{bmatrix}
+		2 & -1 & & &  \\
+		-1 & 2 & -1 & &   \\
+		& \ddots & \ddots & \ddots &\\ 
+		& & -1 & 2 & -1  \\
+		& & & -1 & 2 
+	\end{bmatrix} 
+	\label{eq:GLapl} 
+\end{align}
+which is a discrete approximation to the second derivative operator with Dirichlet boundary condition and defines a 1-dimensional Graph Laplacian as in~\cite{wang2015graphs, fox2016fast}, accounting for smoothness in the ozone profile.
+We reduce the dimension of $\bm{x}$ from $45$ to $n = 34$ by discarding every second ozone VMR over a height of $\approx47$km.
+Doing that, while not changing $\bm{L}$ effectively induces a larger correlation between points at higher altitude.
+
+
 \begin{figure}[ht!]
 	\centering
 	\input{TrueTemp.pdf_tex}
@@ -307,12 +325,14 @@ We plot statistical dependencies as solid arrows and deterministic dependencies 
 	\caption[Prior Samples of $\bm{p}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $b$ and $p_0$ as defined in Tab.~\ref{tab:priors}, where we calculate $\bm{p}$ according to the function in Eq.~\ref{eq:pressFunc}.}
 	\label{fig:PriorPress}
 \end{figure}
-%\begin{figure}[ht!]
-%	\centering
-%	%\includegraphics{PriorTempOverPostMeanSigm.png}
-%	\caption[Prior Samples of $\bm{p}/\bm{T}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $\bm{h}_T$, $\bm{a}$ and $T_0$ for temperature as in Eq.~\ref{eq:tempFunc} and $b$ and $p_0$ for pressure as in Eq.~\ref{eq:pressFunc}. We plot $\bm{p}/\bm{T}$. The hyper-priors are defined in Tab.~\ref{tab:priors}.}
-%	\label{fig:PriorPressOverTemp}
-%\end{figure}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics{PriorTempOverPostMeanSigm.png}
+	\caption[Prior Samples of $\bm{p}/\bm{T}$ according to the respective hyper-prior distribution.]{Prior samples from the hyper-prior distribution of $\bm{h}_T$, $\bm{a}$ and $T_0$ for temperature as in Eq.~\ref{eq:tempFunc} and $b$ and $p_0$ for pressure as in Eq.~\ref{eq:pressFunc}. We plot $\bm{p}/\bm{T}$. The hyper-priors are defined in Tab.~\ref{tab:priors}.}
+	\label{fig:PriorPressOverTemp}
+\end{figure}
+
+Since pressure and temperature are treated as unknowns, they are included within the hierarchical structure and represented through model describing hyper-parameters.
 We observe that the pressure $\bm{p}$ in between $h_{L,0} \approx 7$km and $h_{L,n} \approx 83$km can be described with an exponential function
 \begin{align}
 	p(h) =
@@ -330,11 +350,15 @@ These hyper-prior distributions are rather informative, because we find that the
 The variance of $\pi(b)$ is set to a rather large value.
 The variability of $\pi(p_0)$ is $\approx 80$hPa and close to what we can observe when looking at weather data.
 Means for $\pi(b ,p_0)$ are provided by fitting the exponential in Eq.~\ref{eq:pressFunc} to ground truth pressure values via the Python function \texttt{scipy.optimize.curve\_fit}.
-The in Sec.~\ref{subsec:PriorModelO3} defined Gamma distributions $\pi(\delta,\gamma)$ are not changing, so that scale and rate are $\{  \alpha_\gamma, \beta_\gamma\}  = \{ \alpha_\delta ,\beta_\delta\} = (1,10^{-35})$.
-See Tab.~\ref{tab:priors} for a summary of the hyper-prior distributions.
 
 Prior samples against their ground truth profiles of the pressure $\bm{p}$ are plotted in Fig.~\ref{fig:PriorPress}, the temperature $\bm{T}$ in Fig.~\ref{fig:PriorTemp}, the ratio $\bm{p}/\bm{T}$ in Fig.~\ref{fig:PriorPressOverTemp} and additionally prior samples of $1/\bm{T}$ are plotted in Fig.~\ref{fig:OverTempPrior}.
 In Fig.~\ref{fig:PriorPressOverTemp} we already observe that $\bm{p}/\bm{T}$ inherits the structure of the pressure function and hence the model is uninformative about the temperature.
+
+For $\delta$ and $\gamma$ we pick relatively uninformative Gamma distributions so that \linebreak$\gamma \sim \mathcal{T}(\bm{\theta_{\gamma}}) \propto \gamma^{\alpha_\gamma -1 } \exp{( -\beta_\gamma \gamma) } $ and $\delta \sim \mathcal{T}(\bm{\theta_{\delta}})$ with $\bm{\theta_{\gamma}} = \{  \alpha_\gamma, \beta_\gamma\}  = \{ \alpha_\delta ,\beta_\delta\} = \bm{\theta_{\delta}} = (1,10^{-35})$ similar to \cite{fox2016fast}.
+
+
+See Tab.~\ref{tab:priors} for a summary of the prior distributions.
+
 \clearpage
 
 \begin{figure}[thb!]
@@ -429,7 +453,8 @@ For brevity, we define the linear forward model matrix as
 \begin{align}
 \bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a}) 
 \end{align}
-with $\bm{\Phi}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$ accounting for the all pressure and temperature related hyper-parameters and $\bm{M}$ the affine approximation from the previous Chapter.
+with $\bm{\Phi}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$ accounting for the all pressure and temperature related hyper-parameters and $\bm{M}$ is an affine approximation.
+First $\bm{M} = \bm{I}$ is set to the identity matrix and after obtained results with a model given by the linearised RTE updated to an affine approximation mapping from the linearised RTE to the non-linear RTE.
 
 The distributions of the hierarchical Bayesian framework are:
 \begin{subequations}
@@ -449,13 +474,12 @@ The distributions of the hierarchical Bayesian framework are:
 Due to Gaussian noise $\pi(\bm{y} |  \bm{x},\bm{\Phi},\delta,\gamma )$ is a normally distributed likelihood function and Eq.~\ref{eq:priorXFull} to Eq.~\ref{eq:lastprior} denote prior distributions.
 Before formulating the posterior distribution, we carefully define $\bm{\theta}_{\gamma}, \bm{\theta}_{\delta},\bm{\theta}_{p_0},\bm{\theta}_{b},\bm{\theta}_{\bm{h}},\bm{\theta}_{T_0},\bm{\theta}_{\bm{a}}$, the hyper-prior scales, shapes, means and variances, which are explicitly given in Tab.~\ref{tab:priors}.
 
-We define the hyper-parameters as $\bm{\theta} = \{ \bm{\Phi}, \gamma, \delta \}$
 
 %Note that we fit one exponential function to ground truth pressure values between $h_{L,0} \approx 7$km and $h_{L,n} \approx 82$, so that the pressure value $p_0$ may be different to true sea-level pressure values at $h = 0$km due to that approximation.
 \section{Posterior Distribution}
-Here, the marginal posterior and the full conditional posterior distribution for the described Bayesian model are formulated.
-We either use the t-walk algorithm~\cite{christen2010general} to draw samples from the marginal posterior $\pi(p_0,b,T_0,\bm{h_T},\bm{a} ,\delta, \gamma| \bm{y})$ or we utilise a TT approximation on a predefined grid to generate samples via the SIRT method with an MH correction step.
-In doing so, the reader is guided through the process of obtaining an efficient  higher-dimensional TT approximation.
+Here, the marginal posterior over the hyper-parameters $\bm{\theta} = \{ \bm{\Phi}, \gamma, \delta \}$ and the full conditional posterior distribution for the parameter $\bm{x}|\bm{\theta}$ are formulated.
+To draw samples from the marginal posterior $\pi(\bm{\theta}| \bm{y})$ we utilise a TT approximation on a predefined grid to generate samples via the SIRT method with an MH correction step.
+In doing so, the reader is guided through the process of obtaining an efficient higher-dimensional TT approximation.
 Lastly, the RTO method is utilised to draw ozone samples from the full conditional posterior $\pi(\bm{x}|p_0,b,T_0,\bm{h_T},\bm{a} ,\delta, \gamma, \bm{y})$.
 Recall that $\bm{x} \in \mathbb{R}^n$ with $n = 34$ and $\bm{y} \in \mathbb{R}^m$ with $m = 30$, and that the linear forward model matrix $\bm{A}_{\bm{\Phi}}$ is depending on the hyper-parameter defined as $\bm{\Phi}  \coloneqq \{p_0,b,T_0,\bm{h_T},\bm{a}  \}$.
 Consequently, the marginal posterior is denoted as $\pi( \bm{\Phi},\delta,\gamma  | \bm{y}) $ and the full conditional posterior as $\pi(\bm{x}|\bm{\Phi}, \delta, \gamma, \bm{y})$.
@@ -497,30 +521,30 @@ Consequently, the marginal posterior is denoted as $\pi( \bm{\Phi},\delta,\gamma
 \subsection{Marginal Posterior -- Pressure and Temperature}
 The marginal posterior is given as
 \begin{align}
-\pi( \bm{\theta},\lambda,\gamma  | \bm{y}) \propto &  \lambda^{n/2} \gamma^{m/2}   \exp{ \Bigl\{ - \frac{1}{2} g ( \bm{\theta},\lambda) - \frac{\gamma}{2} f (\bm{\theta},\lambda) \Bigr\}} \pi(\bm{\theta},\lambda,\gamma ) \, ,
+\pi( \bm{\Phi},\delta,\gamma  | \bm{y}) \propto &  \delta^{n/2} \gamma^{m/2}   \exp{ \Bigl\{ - \frac{1}{2} g ( \bm{\Phi},\delta,\gamma ) - \frac{\gamma}{2} f (\bm{\Phi},\delta,\gamma ) \Bigr\}} \pi(\bm{\Phi},\delta,\gamma ) \, ,
 \label{eq:MargPostFull}
 \end{align}
-with $\lambda= \delta / \gamma$,
+with,
 \begin{subequations}
 \label{eq:fandgTrue}
 \begin{align}
-	&f ( \bm{\Phi},\lambda) = \bm{y}^T \bm{y} - \big(\bm{A}_{\bm{\Phi}}^T \bm{y}\big)^T \big(\bm{A}_{\bm{\Phi}}^T  \bm{A}_{\bm{\Phi}} + \lambda \bm{L}\big)^{-1} \big(\bm{A}_{\bm{\theta}}^T \bm{y}\big)  \label{eq:fFullAppl} \, ,  \\
-	&\text{and } g(\bm{\theta},\lambda) = \log \det \big(\bm{A}_{\bm{\theta}}^T  \bm{A}_{\bm{\theta}} + \lambda \bm{L}\big) \label{eq:gFullAppl} \, .
+	&f ( \bm{\Phi},\delta, \gamma) = \bm{y}^T \bm{y} - \big(\bm{A}_{\bm{\Phi}}^T \bm{y}\big)^T \big(\gamma \bm{A}_{\bm{\Phi}}^T  \bm{A}_{\bm{\Phi}} + \delta \bm{L}\big)^{-1} \big(\bm{A}_{\bm{\theta}}^T \bm{y}\big)  \label{eq:fFullAppl} \, ,  \\
+	&\text{and } g(\bm{\Phi},\delta, \gamma) = \log \det \big(\gamma \bm{A}_{\bm{\Phi}}^T  \bm{A}_{\bm{\Phi}} + \delta \bm{L}\big) \label{eq:gFullAppl} \, .
 \end{align}
 \end{subequations}
-For each evaluation of $\pi( \bm{\theta},\lambda,\gamma  | \bm{y})$, $\bm{A}_{\bm{\theta}}$ is composed as in Chapter~\ref{ch:formodel}, and $f$ and $g$ are calculated directly using the Cholesky decomposition via the Python functions \texttt{numpy.linalg.cholesky} and \texttt{scipy.linalg.cho\_solve}.
+For each evaluation of $\pi( \bm{\Phi},\delta,\gamma  | \bm{y})$, $\bm{A}_{\bm{\Phi}}$ is composed as in Chapter~\ref{ch:formodel}, and $f$ and $g$ are calculated directly using the Cholesky decomposition via the Python functions \texttt{numpy.linalg.cholesky} and \texttt{scipy.linalg.cho\_solve}.
 
 \subsection{Posterior Distribution}
 \label{sec:FirstO3Post}
 As explained in Sec.~\ref{subsec:TheoMTC}, we factorise the posterior
 \begin{align}
-	\pi( \bm{x}, \delta, \gamma| \bm{y}) \propto \pi(\bm{y}| \bm{x},\delta,\gamma) \pi( \bm{x},  \delta,\gamma)
+	\pi( \bm{x},\bm{\Phi}, \delta, \gamma| \bm{y}) \propto \pi(\bm{y}| \bm{x},\bm{\Phi},\delta,\gamma) \pi( \bm{x},  \bm{\Phi},\delta,\gamma)
 \end{align}
 into 
 \begin{align}
-	\pi( \bm{x},  \delta,\gamma| \bm{y}) =\pi( \bm{x}| \delta,\gamma, \bm{y})\pi( \delta,\gamma | \bm{y})
+	\pi( \bm{x}, \bm{\Phi}, \delta,\gamma| \bm{y}) =\pi( \bm{x}| \bm{\Phi},\delta,\gamma, \bm{y})\pi( \bm{\Phi},\delta,\gamma | \bm{y})
 \end{align}
-the marginal posterior $\pi(\delta ,\gamma| \bm{y})$ and full conditional posterior $\pi( \bm{x}| \delta,\gamma, \bm{y})$ (see Eq.~\ref{eq:MTC}).
+the marginal posterior $\pi(\bm{\Phi},\delta ,\gamma| \bm{y})$ and full conditional posterior $\pi( \bm{x}| \bm{\Phi},\delta,\gamma, \bm{y})$ (see Eq.~\ref{eq:MTC}).
 %Fox and Norton call this method the marginal and then conditional method (MTC) \cite{fox2016fast}, where we break the correlation structure between $\bm{x}$ and $\gamma, \delta$ as illustrated in Fig. \ref{fig:RueHeld} by marginalising over $\bm{x}$.
 As discussed in~\cite{fox2016fast}, for the linear-Gaussian case, $\bm{x}$ cancels in the marginal posterior over the hyper-parameters.
 Following the MTC scheme, we characterise the marginal posterior first and then the full conditional posterior.
@@ -536,16 +560,16 @@ As in \cite{SIMPSON201216}, consider the joint Gaussian distribution
 		\bm{\mu} \\
 		\bm{A}\bm{\mu}
 	\end{pmatrix},\begin{pmatrix}
-		\bm{Q}_{\bm{\theta}} + \bm{A}^T \bm{\Sigma}_{\bm{\theta}}^{-1} \bm{A} & - \bm{A}^T \bm{\Sigma}_{\bm{\theta}}^{-1} \\
-		\bm{\Sigma}_{\bm{\theta}}^{-1} \bm{A} & \bm{\Sigma}_{\bm{\theta}}^{-1} 
+		\bm{Q}_{\bm{\theta}} + \bm{A}_{\bm{\Phi}}^T \bm{\Sigma}_{\bm{\theta}}^{-1} \bm{A}_{\bm{\Phi}} & - \bm{A}_{\bm{\Phi}}^T \bm{\Sigma}_{\bm{\theta}}^{-1} \\
+		\bm{\Sigma}_{\bm{\theta}}^{-1} \bm{A}_{\bm{\Phi}} & \bm{\Sigma}_{\bm{\theta}}^{-1} 
 	\end{pmatrix}^{-1} \right] \, 	\label{eq:jointMultiGaus}
 \end{align}
 with $\bm{\Sigma}_{\bm{\theta}}^{-1} = \gamma \bm{I} $ and $\bm{Q}_{\bm{\theta}}  = \delta \bm{L} $ and $\bm{\mu} = \bm{0}$.
 Then the full conditional posterior distribution of ozone 
 \begin{align}
-	\bm{x}| \delta, \gamma, \bm{y}  \sim \mathcal{N}\big( \underbrace{ (\bm{A}^T \bm{A} + \delta / \gamma \bm{L} )^{-1} \bm{A}^T \bm{y}}_{\bm{x}_{\lambda}}, ( \underbrace{ \gamma \bm{A}^T \bm{A} + \delta \bm{L} }_{\gamma \bm{B}_{\lambda}}  )^{-1} \big) \, \label{eq:CondPost},
+	\bm{x}|\bm{\Phi}, \delta, \gamma, \bm{y}  \sim \mathcal{N}\big(  (\bm{A}_{\bm{\Phi}}^T \bm{A} + \delta / \gamma \bm{L} )^{-1} \bm{A}_{\bm{\Phi}}^T \bm{y}, (  \gamma \bm{A}_{\bm{\Phi}}^T \bm{A}_{\bm{\Phi}} + \delta \bm{L}  \big) \, \label{eq:CondPost},
 \end{align}
-is a normal distribution with $\lambda = \delta / \gamma $ and samples can be drawn via the randomise then optimise (RTO) method (see Sec.~\ref{subsec:FullCondPost}).
+is a normal distribution and samples can be drawn via the randomise then optimise (RTO) method (see Sec.~\ref{subsec:FullCondPost}).
 
 
 \section{Results}
