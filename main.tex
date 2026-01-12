@@ -573,13 +573,78 @@ is a normal distribution and samples can be drawn via the randomise then optimis
 
 
 \section{Results}
+In this section the results are presented.
+Given the data see Sec. the inverse problem is treated as a linear inverse problem by neglecting the non-linear absorption in the RTE.
+Then an affine approximation is found and the non-linear forward model is approximated by the affine map and the linear forward model.
+Finally, we present posterior ozone, pressure and temperature profiles based on the approximated forward model.
 
 \subsection{Linear Forward Model}
-\begin{itemize}
-	\item marginal posterior
-	\item TT set up and IACT
-	\item conditional posterior for affine map
-\end{itemize}
+
+Here as already mentioned the forward model is defined as:
+\begin{align}
+	\bm{A}_{\bm{\Phi}} \coloneqq \bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a}) \, .
+\end{align}
+
+Consequently, with the priors and simulated data, the marginal and conditional posterior are well defined and a Tensor-Train approximation of the marginal posterior is approximated using a tensor-train (TT) and the squared inverse Rosneblatt transport (SIRT) \cite{} is employed to generate samples from the marginal posterior.
+Conditioned on those samples the randomise then optimise (RTO) method \cite{} is used to sample from the full conditional posterior.
+
+\subsubsection{Tensor-Train Approximation of the Marginal Posterior}
+Instead of using conventional Markov-Chain Monte-Carlo methods to generate samples from the marginal posterior, we approximate the marginal posterior directly using a TT representation.
+In the following a brief introduction to the TT format is provided.
+
+Assume the target function is $\pi( \bm{\Phi},\delta,\gamma  | \bm{y})$ and the parameter $\bm{\theta} \coloneqq \{\bm{\Phi},\delta,\gamma  \} \in \mathbb{R}^d  $ is $d$-dimensional.
+First a $d$-dimensional grid with $n$ grid points in for dimension in the parameter space has to be defined.
+So a TT represents a parameter space $n^d$ grid points.
+Since that is computationally not feasible a TT is employed to approximate that space.
+More specifically, to ensure non-negativity, we approximate the square root of $\pi( \bm{\theta}  | \bm{y})$ over the whole parameter space can be written as:
+\begin{align}
+	\sqrt{\pi( \bm{\theta}  | \bm{y})} \approx \tilde{g}(\bm{\theta}) =  \bm{G}_1(\theta_1), \dots, \bm{G}_k(\theta_k), \dots, \bm{G}_d(\theta_d)\, .
+\end{align}
+where each $\bm{G}_k \in \mathbb{R}^{r_{k-1}\times n \times r_{k}}$ is a TT core.
+Further, $r_{k}$ are the ranks of the individual cores and bounded by $r_{0} = 1$ and $r_{d} = 1$.
+For now assume the ranks $r_k = r$ for $k =1, \dots, d-1$, then the TT approximates the function space with $n \times r^2 \times (d-2) + n \times r \times 2$ function evaluations instead of the $n^d$ function evaluations traditionally required.
+To generate a TT for $\sqrt{\pi( \bm{\theta}  | \bm{y})}$ we use the \textcolor{red}{toolbox}, which implements the TT-Cross algorithm from \cite{}.
+
+Given a TT approximation samples from the target function are generated via the inverse Rosenblatt transport (IRT) scheme \cite{}.
+Because each of the TT cores is representative for one dimensions in the parameter it is easy to integrate over the individual parameter dimensions.
+This way a sequence of 1-dimensional functions can be constructed, so that
+\begin{align*}
+		\pi( \bm{\theta}  | \bm{y}) =&  \quad \pi(\theta_1 | \bm{y}) \\
+			& \quad \times \pi( \theta_2 | \theta_1, \bm{y}) \\
+			&\quad \times\pi( \theta_3 | \theta_2,\theta_1, \bm{y})  \\
+			&\quad \times\pi( \theta_4 | \theta_3, \theta_2,\theta_1, \bm{y}) \\
+			& \quad \quad \vdots \\
+			&\quad \times \pi( \theta_d | \theta_{d-1}, \dots, \theta_4,\theta_3, \theta_2,\theta_1, \bm{y}) \, .
+\end{align*}
+For each one-dimensional 'conditional marginal' $\pi( \theta_k | \theta_{k-1},\dots, \theta_1, \bm{y})$ conditioned on $\theta_{k-1},\dots, \theta_1, $ and marginalised over $\theta_{k+1} , \dots, \theta_d$  a mapping from the uniform distribution is constructed via the cumulative distribution function (CDF)
+\begin{align}
+	F(\theta_k) = \int_{-\infty}^{\theta_k} \pi( \hat{\theta}_k | \theta_{k-1},\dots, \theta_1, \bm{y}) \diff \hat{\theta}_k  \, .
+	\label{eq:CurrCDF}
+\end{align}
+Then a uniformly distribute random variable $\bm{u} \sim \mathcal{U} [0,1]$ is projected onto the parameter space via the inverse
+\begin{align*}
+	\theta_k = F^{-1}(u_k)
+\end{align*}
+with $u_k \in \bm{u}$.
+
+Since we approximate the square root of the target function this is the squared inverse Rosneblatt transport (SIRT), where a small constant $\xi$ is added so that \begin{align}
+	\pi( \bm{\theta}  | \bm{y}) \approx \xi +  \tilde{g}(\bm{\theta})
+\end{align}
+This ensure positivity and makes each of the well defined.
+See \cite{} on how to calculate each of the conditional marginals in practise.
+
+
+
+
+What is a tensor-train?
+What do we approximate?
+How do sample?
+What grid to we choose?
+How do we choose the ranks?
+
+
+\subsubsection{Randomise then Optimise Method to Draw Samples from the Full Conditional Posterior}
+
 In theory, this scheme provides independent samples, but in practice, every system produces correlated samples.
 To assess how efficient this scheme is, we define the Integrated Autocorrelation Times (IACT)
 \begin{align}
