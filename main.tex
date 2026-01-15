@@ -593,49 +593,49 @@ Instead of using conventional Markov-Chain Monte-Carlo methods to generate sampl
 In the following a brief introduction to the TT format is provided.
 
 Assume the target function is $\pi( \bm{\Phi},\delta,\gamma  | \bm{y})$ and the input $\bm{\theta} \coloneqq \{\bm{\Phi},\delta,\gamma  \} \in \mathbb{R}^d  $ is $d$-dimensional.
-First a $d$-dimensional grid with $n$ grid points in for each dimension in the parameter space has to be defined.
-Because that is a parameter space of $n^d$ grid points, which it is computationally not feasible to represent naively in a $d$-dimensional tensor, a TT is employed to approximate the target function on that parameter space.
-In practise a TT approximation may have negative or zero values in regions where the true function value is small and positive.
+First, a $d$-dimensional grid with $n$ grid points in each dimension the parameter space is defined by $n^d$ grid points.
+This is computationally not feasible to represent naively in a $d$-dimensional tensor, so a TT is employed to approximate the target function on that parameter space.
+In practice, a TT approximation may have negative or zero values in regions where the true function value is small and positive.
 That is why, to ensure non-negativity, we approximate the square root of $\pi( \bm{\theta}  | \bm{y})$ over the whole parameter space, which can be written as:
 \begin{align}
 	\sqrt{\pi( \bm{\theta}  | \bm{y})} \approx \tilde{g}(\bm{\theta}) =  \bm{G}_1(\theta_1), \dots, \bm{G}_k(\theta_k), \dots, \bm{G}_d(\theta_d)\, ,
 \end{align}
 where each $\bm{G}_k \in \mathbb{R}^{r_{k-1}\times n \times r_{k}}$ is a TT core.
 Further, $r_{k}$ are the ranks of the individual cores and bounded by $r_{0} = 1$ and $r_{d} = 1$.
-For now assume the ranks $r_k = r$ for $k =1, \dots, d-1$, then the TT approximates the function space with $n \times r^2 \times (d-2) + n \times r \times 2$ instead of the $n^d$ function evaluations traditionally required.
+For now, assume the ranks $r_k = r$ for $k =1, \dots, d-1$, then the TT approximates the function space with $n \times r^2 \times (d-2) + n \times r \times 2$ instead of the $n^d$ function evaluations.
 
-Given a TT approximation samples from the target function are generated via the inverse Rosenblatt transform (IRT) scheme \cite{}, more precisely the squared inverse Rosenblatt transform (SIRT) since we approximate the square root of the target function.
+Given a TT approximation, samples from the target function are generated via the inverse Rosenblatt transform (IRT) scheme \cite{}, more precisely, the squared inverse Rosenblatt transform (SIRT) since we approximate the square root of the target function.
 Within this scheme a sequence of 1-dimensional functions can be constructed, so that
 \begin{align}
-		\begin{split}
+	\begin{split}
 		\pi( \bm{\theta}  | \bm{y}) =&  \quad \pi(\theta_1 | \bm{y}) \\
-			& \quad \times \pi( \theta_2 | \theta_1, \bm{y}) \\
-			&\quad \times\pi( \theta_3 | \theta_2,\theta_1, \bm{y})  \\
-			&\quad \times\pi( \theta_4 | \theta_3, \theta_2,\theta_1, \bm{y}) \\
-			& \quad \quad \vdots \\
-			&\quad \times \pi( \theta_d | \theta_{d-1}, \dots, \theta_4,\theta_3, \theta_2,\theta_1, \bm{y}) \, .
-		\end{split}
+		& \quad \times \pi( \theta_2 | \theta_1, \bm{y}) \\
+		&\quad \times\pi( \theta_3 | \theta_2,\theta_1, \bm{y})  \\
+		&\quad \times\pi( \theta_4 | \theta_3, \theta_2,\theta_1, \bm{y}) \\
+		& \quad \quad \vdots \\
+		&\quad \times \pi( \theta_d | \theta_{d-1}, \dots, \theta_4,\theta_3, \theta_2,\theta_1, \bm{y}) \, .
+	\end{split}
 \end{align}
-We call each function $\pi( \theta_k | \theta_{k-1},\dots, \theta_1, \bm{y}) \in \mathbb{R}^n$ the 'conditional marginal' beacuse it is conditioned on $\theta_{k-1},\dots, \theta_1, $ and marginalised over $\theta_{k+1} , \dots, \theta_d$.
-To obtain these is computationally relatively cheap because each of the TT cores is representative for one dimensions in the parameter space and hence it is easy to integrate over the individual parameters $\theta_k \in \bm{\theta}$ for $k = 1, \dots, d$.
+We call each function $\pi( \theta_k | \theta_{k-1},\dots, \theta_1, \bm{y}) \in \mathbb{R}^n$ the 'conditional marginal' because it is conditioned on $\theta_{k-1},\dots, \theta_1, $ and marginalised over $\theta_{k+1} , \dots, \theta_d$.
+To obtain these is computationally relatively cheap because each of the TT cores is representative for one dimension in the parameter space and hence it is easy to integrate over the individual parameters $\theta_k \in \bm{\theta}$ for $k = 1, \dots, d$.
 The marginal distribution of the first dimension is computed as:
 \begin{align}
 	\begin{split}
-	\pi(\theta_1 | \bm{y}) \approx \frac{1}{z}  \bm{G}_1^2(\theta_1)  
-		 \int \bm{G}_{2}^2(\theta_{2}) \, \diff \theta_{2}\cdots 
+		\pi(\theta_1 | \bm{y}) \approx \frac{1}{z}  \bm{G}_1^2(\theta_1)  
+		\int \bm{G}_{2}^2(\theta_{2}) \, \diff \theta_{2}\cdots 
 		\int \bm{G}_d^2(\theta_d)  \, \diff \theta_d ,
 	\end{split}
 \end{align}
 where each of the integrals reduce a core $\bm{G}_k \in \mathbb{R}^{r_{k-1}\times n \times r_{k}}$ to $\int \bm{G}_k^2(\theta_k)  \, \diff \theta_k \in \mathbb{R}^{r_{k-1} \times r_{k}}$ and $z$ is a normalisation constant see \cite{}.
 If you want to use a quadrature scheme to calculate expectations, e.~g., $\mathbb{E}_{	\pi( \bm{\theta}  | \bm{y})} [f(\bm{\theta})]$, or are only interested in the individual marginals you are done here since other marginals can be computed the same way.
-Note that, when conditioning on a parameter value the core $\bm{G}^2_k(\theta_k)\in \mathbb{R}^{r_{k-1} \times r_{k}}$.
+Note that, for a specific parameter value $\theta_k$ the core $\bm{G}^2_k(\theta_k)\in \mathbb{R}^{r_{k-1} \times r_{k}}$ is given according to the used interpolation basis, see, e.g., \cite{} for piecewise linear interpolation.
 
-The 'conditional marginal' defines mapping from the uniform distribution to the target function, which is constructed via the cumulative distribution function (CDF)
+The 'conditional marginal' defines a mapping from the uniform distribution to the target function, which is constructed via the cumulative distribution function (CDF)
 \begin{align}
 	F(\theta_k) = \int_{-\infty}^{\theta_k} \pi( \hat{\theta}_k | \theta_{k-1},\dots, \theta_1, \bm{y}) \diff \hat{\theta}_k  \, .
 	\label{eq:CurrCDF}
 \end{align}
-Then a uniformly distribute random variable $\bm{u} \sim \mathcal{U} [0,1]^d$ is projected onto the parameter space via the inverse
+Then a uniformly distributed random variable $\bm{u} \sim \mathcal{U} [0,1]^d$ is projected onto the parameter space via the inverse
 \begin{align*}
 	\theta_k = F^{-1}(u_k)
 \end{align*}
@@ -646,6 +646,7 @@ This scheme is repeated for each 'conditional marginal' in Eq. \ref{} until a sa
 \begin{align}
 	\pi( \bm{\theta}  | \bm{y}) \approx \xi + \tilde{g}(\bm{\theta})^2
 \end{align}
+That is to ensure that later in the MH correction step
 This ensure positivity and makes each of mappings as in Eq. \ref{} well defined.
 This is to ensure that one doesn’t get stuck in the correction step.
 See \cite{} on how to calculate each of the conditional marginals in practise.}
