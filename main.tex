@@ -640,16 +640,40 @@ Then a uniformly distributed random variable $\bm{u} \sim \mathcal{U} [0,1]^d$ i
 	\theta_k = F^{-1}(u_k)
 \end{align*}
 with $u_k \in \bm{u}$.
-This scheme is repeated for each 'conditional marginal' in Eq. \ref{} until a sample $\bm{\theta} \sim \pi (\bm{\theta}|\bm{y})$ is obtained.
+This scheme is repeated for each 'conditional marginal' in Eq. \ref{} until a sample $\bm{\theta} \sim \tilde{\pi} (\bm{\theta}|\bm{y})$ is obtained.
 
-\textcolor{red}{In practise a small constant $\xi$ according to the L2-norm error of the TT approximation is added so that 
+Since the samples $\{ \bm{\theta}^{(1)} , \dots, \bm{\theta}^{(N)}\} \sim \tilde{\pi} (\bm{\theta}|\bm{y})$ are drawn from an approximation they are corrected with an Metropolis--Hastings (MH) algorithm \cite{}.
+To take one MH correction step from a current state $\bm{\theta}$ to a proposed state $\bm{\theta}^{\prime} $ the ratio
 \begin{align}
-	\pi( \bm{\theta}  | \bm{y}) \approx \xi + \tilde{g}(\bm{\theta})^2
+	h(\bm{\theta}, \bm{\theta}^{\prime}  ) = \frac{\pi( \bm{\theta}^{\prime}  | \bm{y}) \tilde{\pi}( \bm{\theta}  | \bm{y})}{\pi( \bm{\theta}  | \bm{y}) \tilde{\pi}( \bm{\theta}^{\prime}   | \bm{y})}
 \end{align}
-That is to ensure that later in the MH correction step
-This ensure positivity and makes each of mappings as in Eq. \ref{} well defined.
-This is to ensure that one doesn’t get stuck in the correction step.
-See \cite{} on how to calculate each of the conditional marginals in practise.}
+is computed and the proposal $ \bm{\theta}^{\prime}$ is accepted with probability
+\begin{align}
+	h(\bm{\theta}, \bm{\theta}^{\prime}  )  = \min (h(\bm{\theta}, \bm{\theta}^{\prime}  ) ,1) \, .
+\end{align}
+If $ \bm{\theta}^{\prime}$ is accepted the next current state is $ \bm{\theta}= \bm{\theta}^{\prime}$, if $ \bm{\theta}^{\prime}$ is rejected $ \bm{\theta}$ remains the current state.
+
+
+In practise a small constant $\xi$ according to the L2-norm error of the TT approximation is added so that 
+\begin{align}
+	\pi( \bm{\theta}  | \bm{y}) \approx \tilde{\pi}( \bm{\theta}  | \bm{y}) = \frac{1}{z} (\xi + \tilde{g}(\bm{\theta})^2) \, .
+\end{align}
+This has the consequence that the chain of the MH correction algorithm is uniform geometric convergent (and ergodic \cite{}) towards $\pi( \bm{\theta}  | \bm{y})$, because
+\begin{align}
+	 \tilde{w} =\left\lVert	\frac{\pi( \bm{\theta}  | \bm{y})}{\tilde{\pi}( \bm{\theta}  | \bm{y})} \right\rVert_{\infty} = \sup \frac{\pi( \bm{\theta}  | \bm{y})}{\xi + \tilde{g}(\bm{\theta})^2} < \infty
+\end{align}
+is bounded \cite{}.
+Without $\xi$ the TT approximation $\tilde{g}(\bm{\theta})^2$ may be arbitrarily small in regions where the true function is small and the ratio in \ref{} can not be bounded.
+With $\xi$ we introduce a more or less uniform error.
+Further \cite{} show that if $\xi$ is chosen according to the 2-norm error
+\begin{align}
+	\left\lVert \tilde{g}(\bm{\theta}) - \sqrt{\pi( \bm{\theta}  | \bm{y})}\right\rVert_2\leq \epsilon
+\end{align}
+then the approximation satisfies the error bound
+\begin{align}
+	\left\lVert \sqrt{\tilde{\pi}( \bm{\theta}  | \bm{y})}- \sqrt{\pi( \bm{\theta}  | \bm{y})}\right\rVert_2 \leq \sqrt{2} \epsilon \, .
+\end{align}
+
 
 To generate a TT for $\sqrt{\pi( \bm{\theta}  | \bm{y})}$ we use the \textcolor{red}{toolbox}, which implements the TT-Cross algorithm from \cite{}.
 As already mentioned we use the \textcolor{red}{TT toolbox}, which uses the TT-Cross amen scheme to approximate the target function.
@@ -672,10 +696,27 @@ The IATCs are $\tau_{\text{int},\lambda} = 1.05\pm0.04$ and $\tau_{\text{int},\g
 So every second sample via the IRT scheme presents an independent marginal posterior sample.
 Conditioned on an independent sample from the marginal posterior, one can draw an independent sample from the full conditional posterior.
 
-Further we can use that to bound the maximum absolute error $\epsilon$ as in \cite{}.
-So the error is $(\tau_{\text{int}} -1 )/2  \leq \epsilon$.
+Further we can use that to bound the maximum absolute error $\epsilon$ as in.
+\begin{align}
+	\frac{\tau_{\text{int}} -1 }{2}	 \leq \tilde{w} - 1
+\end{align}
+We can use 
+\begin{align}
+	\tau_{\text{int}} -1 
+\end{align}
+as an error estimate.
 
-
+\clearpage
+\begin{figure}[h!]% will be the left-side figure
+	\includegraphics[]{1stCorrPlot.png}
+	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from TT approximation of $\sqrt{\pi( \bm{\theta},\lambda,\gamma  | \bm{y})}$ via SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
+	\label{fig:CorrPlot}
+\end{figure}
+\begin{figure}% will be the right-side figure
+	\includegraphics[]{2ndCorrPlot.png}
+	\caption*{Correlation plot of samples from TT-approximation of $\sqrt{\pi(\bm{\theta},\lambda,\gamma | \bm{y})}$ via SIRT-MH scheme.}
+\end{figure}
+\clearpage
 \subsubsection{Randomise then Optimise Method to Draw Samples from the Full Conditional Posterior}
 
 
