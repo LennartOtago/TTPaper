@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: biblatex.bst
@@ -20,41 +20,41 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main-blx.bib
 Database file #2: bib.bib
 Warning--I didn't find a database entry for "UwerrM"
-Biblatex version: 3.17
+Biblatex version: 3.20
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 26 entries,
-            6399 wiz_defined-function locations,
-            1369 strings with 15374 characters,
-and the built_in function-call counts, 447651 in all, are:
-= -- 42312
+            6402 wiz_defined-function locations,
+            1369 strings with 15383 characters,
+and the built_in function-call counts, 447788 in all, are:
+= -- 42313
 > -- 3950
 < -- 1132
 + -- 13714
 - -- 1605
-* -- 34413
-:= -- 56035
+* -- 34439
+:= -- 56037
 add.period$ -- 0
 call.type$ -- 26
 change.case$ -- 682
 chr.to.int$ -- 54
 cite$ -- 50
-duplicate$ -- 41203
-empty$ -- 37293
+duplicate$ -- 41228
+empty$ -- 37319
 format.name$ -- 2771
-if$ -- 88373
+if$ -- 88401
 int.to.chr$ -- 0
 int.to.str$ -- 73
 missing$ -- 0
 newline$ -- 1418
 num.names$ -- 1479
-pop$ -- 10934
+pop$ -- 10959
 preamble$ -- 1
 purify$ -- 1001
 quote$ -- 0
-skip$ -- 6069
+skip$ -- 6070
 stack$ -- 0
-substring$ -- 88232
+substring$ -- 88235
 swap$ -- 5556
 text.length$ -- 857
 text.prefix$ -- 28

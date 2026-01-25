@@ -578,6 +578,14 @@ Given the data see Sec. the inverse problem is treated as a linear inverse probl
 Then an affine approximation is found and the non-linear forward model is approximated by the affine map and the linear forward model.
 Finally, we present posterior ozone, pressure and temperature profiles based on the approximated forward model.
 
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPapData.png}
+	\caption[]{Non-linear noise-free data and non-linear noisy data at different tangent heights. Negative noisy data values are not shown due to logarithmic scaling.}
+	\label{fig:Data}
+\end{figure} 
+
 \subsection{Linear Forward Model}
 
 Here as already mentioned the forward model is defined as:
@@ -717,6 +725,21 @@ as an error estimate.
 	\caption*{Correlation plot of samples from TT-approximation of $\sqrt{\pi(\bm{\theta},\lambda,\gamma | \bm{y})}$ via SIRT-MH scheme.}
 \end{figure}
 \clearpage
+
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPaperFirstPress.png}
+	\caption[]{29 pressure samples.}
+	\label{fig:PressSampl}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPaperFirstTemp.png}
+	\caption[]{29  temperature samples.}
+	\label{fig:TempSampl}
+\end{figure}
 \subsubsection{Randomise then Optimise Method to Draw Samples from the Full Conditional Posterior}
 
 
@@ -769,7 +792,12 @@ The full conditional posterior samples are plotted in Fig.~\ref{fig:OzonSampl} w
 The fact that we have to deal with negative ozone values is due to the poor prior choice in $\pi(\bm{x}|\delta)$.
 The posterior samples are used to find an affine map.
 
-
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPaperFirstOzone.png}
+	\caption[]{29 Ozone samples via RTO method and posterior ozone mean via quadrature (see Eq.~\ref{eq:MeanInt}).}
+	\label{fig:OzonSampl}
+\end{figure}
 
 \subsection{Finding an Affine Map}
 \label{sec:affine}
@@ -827,7 +855,7 @@ to show that $ \bm{M}:\bm{A}_L\bm{x} \rightarrow \bm{A}(\bm{x})$ is an affine ma
 
 \begin{figure}[ht!]
 	\centering
-	%\includegraphics{AffinePapAssMap.png}
+	\includegraphics{TTPapAssMap.png}
 	\caption[Assessment of affine map.]{Assessment of how well the affine map $\bm{M}$ approximates noise-free non-linear data $\bm{A}(\bm{x})$ (red circles) from noise-free linear data $\bm{A}_L\bm{x}$ (grey stars). The approximated noise-free data (black stars) has a relative RMS error of $\approx 0.01\%$ compared to the true non-linear noise-free data.
 		The ozone profile $\bm{x}$ to generate this noise-free data has not been used to create the affine map.}
 	\label{fig:AssMap}
@@ -843,12 +871,44 @@ This takes $\approx 0.1$s.
 
 \subsection{Approximated Forward Model}
 
+\clearpage
+\begin{figure}[h!]% will be the left-side figure
+	\includegraphics[]{1stCorrPlotAffine.png}
+	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from TT approximation of $\sqrt{\pi( \bm{\theta},\lambda,\gamma  | \bm{y})}$ via SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
+	\label{fig:CorrPlot}
+\end{figure}
+\begin{figure}% will be the right-side figure
+	\includegraphics[]{2ndCorrPlotAffine.png}
+	\caption*{Correlation plot of samples from TT-approximation of $\sqrt{\pi(\bm{\theta},\lambda,\gamma | \bm{y})}$ via SIRT-MH scheme.}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPaperFirstPressAffine.png}
+	\caption[]{29 pressure samples, approximated model.}
+	\label{fig:PressSampl}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPaperFirstTempAffine.png}
+	\caption[]{29  temperature samples, approximated model.}
+	\label{fig:TempSampl}
+\end{figure}
+
 \begin{itemize}
 	\item marginal posterior same TT setup
 	\item conditional posterior
 	\item plot results
 \end{itemize}
 \clearpage
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[]{TTPaperFirstOzoneAffine.png}
+	\caption[]{29 Ozone samples via RTO method and posterior ozone mean via quadrature (see Eq.~\ref{eq:MeanInt}) with aproximated model.}
+	\label{fig:OzonSampl}
+\end{figure}
 \section{Conclusion}
 \begin{itemize}
     \item TT approximation vs conventional sampler cite Rosenthal for IACT
