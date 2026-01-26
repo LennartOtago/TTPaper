@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2025)
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: biblatex.bst
@@ -19,49 +19,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main-blx.bib
 Database file #2: bib.bib
-Warning--I didn't find a database entry for "UwerrM"
-Biblatex version: 3.20
+Biblatex version: 3.17
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 26 entries,
-            6402 wiz_defined-function locations,
-            1369 strings with 15383 characters,
-and the built_in function-call counts, 447788 in all, are:
-= -- 42313
-> -- 3950
-< -- 1132
-+ -- 13714
-- -- 1605
-* -- 34439
-:= -- 56037
+You've used 34 entries,
+            6399 wiz_defined-function locations,
+            1416 strings with 16914 characters,
+and the built_in function-call counts, 511706 in all, are:
+= -- 47305
+> -- 5039
+< -- 1525
++ -- 15571
+- -- 1972
+* -- 38400
+:= -- 62688
 add.period$ -- 0
-call.type$ -- 26
-change.case$ -- 682
+call.type$ -- 34
+change.case$ -- 936
 chr.to.int$ -- 54
-cite$ -- 50
-duplicate$ -- 41228
-empty$ -- 37319
-format.name$ -- 2771
-if$ -- 88401
+cite$ -- 66
+duplicate$ -- 48442
+empty$ -- 42895
+format.name$ -- 3698
+if$ -- 101418
 int.to.chr$ -- 0
-int.to.str$ -- 73
+int.to.str$ -- 101
 missing$ -- 0
-newline$ -- 1418
-num.names$ -- 1479
-pop$ -- 10959
+newline$ -- 1682
+num.names$ -- 2005
+pop$ -- 14129
 preamble$ -- 1
-purify$ -- 1001
+purify$ -- 1287
 quote$ -- 0
-skip$ -- 6070
+skip$ -- 8014
 stack$ -- 0
-substring$ -- 88235
-swap$ -- 5556
-text.length$ -- 857
-text.prefix$ -- 28
+substring$ -- 96614
+swap$ -- 6943
+text.length$ -- 1099
+text.prefix$ -- 36
 top$ -- 1
-type$ -- 872
+type$ -- 1144
 warning$ -- 0
-while$ -- 6124
+while$ -- 6958
 width$ -- 0
-write$ -- 1393
-(There was 1 warning)
+write$ -- 1649

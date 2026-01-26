@@ -5,6 +5,7 @@
 \usepackage{adjustbox} 
 \usepackage{hhline}
 \usepackage{caption}
+\usepackage[]{hyperref}
 \captionsetup[table]{position=bottom} 
 \usepackage{array, makecell}
 \newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
@@ -28,15 +29,34 @@
 
 
 %\usepackage[backend=bibtex,style=numeric,natbib=true,maxbibnames=5,giveninits=true]{biblatex}
-\usepackage[backend=bibtex,style=numeric,natbib=true,maxbibnames=5,giveninits=true]{biblatex}
+\usepackage[backend=bibtex,style=numeric,natbib=true,maxbibnames=5,giveninits=true, useprefix]{biblatex}
+
 \newcommand*{\bibtitle}{References}
 \DeclareNameAlias{default}{last-first}
+\DeclareSortingNamekeyTemplate{
+	\keypart{
+		\namepart{family}
+	}
+	\keypart{
+		\namepart{prefix}
+	}
+	\keypart{
+		\namepart{given}
+	}
+	\keypart{
+		\namepart{suffix}
+	}
+}
+\renewbibmacro{begentry}{\midsentence}
+
 \addbibresource{bib.bib}
 
 \title{Tensor-Train Paper}
 \author{Lennart}
 \date{November 2025}
-
+%\makeatletter
+%\AtBeginDocument{\toggletrue{blx@useprefix}}
+%\makeatother
 \begin{document}
 
 \maketitle
@@ -62,7 +82,7 @@ Assume we observe some data
 	\label{eq:NonLinDat}
 \end{align}
 based on a linear forward model $\bm{A}$ an unknown parameter vector $\bm{x}$ and some additive random noise $\bm{\eta}$.
-Naturally, due to the noise, the observation process in Eq. \ref{eq:NonLinDat} is a random process.
+Naturally, due to the noise, the observation process in Eq.~\ref{eq:NonLinDat} is a random process.
 Hence, in Bayesian modelling, the aim is to determine a probability distribution over the parameter $\bm{x}$ given some data $\bm{y}$.
 Further, a hierarchical Bayesian model incorporates (auxiliary) hyper-parameters $\bm{\theta}$.
 Within a Bayesian approach all unknown hyper-parameters and parameters are treated as random variables \cite[Chapter 3]{kaipio2005statinv}.
@@ -259,14 +279,14 @@ We measure $m=30$ times between heights of $\approx 7$km and $\approx 68$km with
 \end{align*}
 Above $\approx 68$km the data is noise dominated (see Fig.~\ref{fig:Data}), hence no measurement are taken in larger altitudes.
 Each pointing angle $\phi_j$ defines a path $\Gamma_j$ (see Fig.~\ref{fig:LIMB}).
-The corresponding path integrals in Eq.~\ref{eq:RTE} and Eq.~\ref{eq:absRTE} are evaluated using the trapezoidal rule and define the non-linear forward model $\bm{A}(\bm{x},  \bm{p},\bm{T})   \in \mathbb{R}^{m}$ for the set of $m$ noise-free measurements.
-Here, each entry $A_{j}$ of $\bm{A}(\bm{x},\bm{p},\bm{T})\in \mathbb{R}^{m}$ includes multiple evaluations of the integral in Eq.~\ref{eq:absRTE} to calculate the absorption $\tau(r)$.
-For brevity we denote the non-linear forward model as $\bm{A}(\bm{x}) \coloneqq \bm{A}(\bm{x},  \bm{p},\bm{T})$.
+The corresponding path integrals in Eq.~\ref{eq:RTE} and Eq.~\ref{eq:absRTE} are evaluated using the trapezoidal rule and define the non-linear forward model $\bm{A}(\bm{p},\bm{T},\bm{x})   \in \mathbb{R}^{m}$ for the set of $m$ noise-free measurements.
+Here, each entry $A_{j}$ of $\bm{A}(\bm{p},\bm{T},\bm{x})\in \mathbb{R}^{m}$ includes multiple evaluations of the integral in Eq.~\ref{eq:absRTE} to calculate the absorption $\tau(r)$.
+%For brevity we denote the non-linear forward model as $\bm{A}(\bm{x}) \coloneqq \bm{A}(\bm{x},  \bm{p},\bm{T})$.
 The simulated data vector
 \begin{align}
-	\bm{y} = \bm{A}(\bm{x}) + \bm{\eta}\, 
+	\bm{y} = \bm{A}(\bm{p},\bm{T},\bm{x}) + \bm{\eta}\, 
 \end{align}
-includes an additive identically-distributed Gaussian noise vector $\bm{\eta} \sim \mathcal{N}(0,\gamma^{-1} \bm{I})$.
+includes an additive identically-distributed Gaussian noise vector $\bm{\eta} \sim \mathcal{N}(0,\bm{\Sigma})$ with $\bm{\Sigma} = \gamma^{-1} \bm{I}$.
 The noise precision is chosen so that the signal-to-noise ratio (SNR) is approximately $150$.
 The SNR is defined as
 \begin{align}
@@ -276,15 +296,15 @@ where STD noise is the standard deviation of the noise.
 An SNR of 150 is similar to~\cite{Froidevaux2008snrozone}, where a signal with a maximal spectral intensity of around $100\text{K}$ and a noise range of $0.4$ to $1.6\text{K}$ is reported.
 
 By neglecting the absorption (e.g., set $\tau = 1$ in Eq.~\eqref{eq:absRTE}) the RTE is linearised.
-This denotes the linear forward model matrix $\bm{A}_L\in \mathbb{R}^{m\times n}$.
-The integral in Eq.~\eqref{eq:RTE} is evaluated using the trapezoidal rule and enables matrix-vector multiplication $\bm{A}_L \bm{x}$ to compute noise-free linear data.
+This denotes the linear forward model matrix $\bm{A}_L(\bm{p},\bm{T})\in \mathbb{R}^{m\times n}$.
+The integral in Eq.~\eqref{eq:RTE} is evaluated using the trapezoidal rule and enables matrix-vector multiplication $\bm{A}_L(\bm{p},\bm{T}) \bm{x}$ to compute noise-free linear data.
 Since neglecting the absorption changes the measurements only slightly (about $1\%$, see Sec.~\ref{sec:affine}), we classify the inverse problem as a weakly non-linear inverse problem.
 Note that the methods used here will work with different SNRs or other frequencies.
 
 \clearpage
 \section{Hierarchical Bayesian Model}
 \label{sec:BayModel}
-Here a hierarchical Bayesian model is developed where the forward model is described by either $\bm{A}_L$ the linearised RTE  (see Eq.~\ref{eq:RTE}) or by the approximation $\bm{M} \bm{A}_L$ to the non-linear RTE, where $\bm{M}$ is an affine map.
+Here a hierarchical Bayesian model is developed where the forward model is described by either $\bm{A}_L(\bm{p},\bm{T})$ the linearised RTE  (see Eq.~\ref{eq:RTE}) or by the approximation $\bm{M} \bm{A}_L(\bm{p},\bm{T})$ to the non-linear RTE, where $\bm{M}$ is an affine map.
 Parameters and hyper-parameter are classified and a choice of prior distributions is established.
 A directed acyclic graph (DAG) is used to visualise conditional dependencies between hyper-parameters and the parameter (see Fig.~\ref{fig:DAGO3}), as well as how distributions progress through to an observation (square box). 
 We plot statistical dependencies as solid arrows and deterministic dependencies as dotted arrows.
@@ -366,10 +386,11 @@ See Tab.~\ref{tab:priors} for a summary of the prior distributions.
 	\begin{tikzpicture}
 		\node[roundnode2] at (-4.5,6.5) (Q)     {$\bm{Q}$};
 		\node[roundnode2] at (-3,5) (x)     {$\bm{x}$};
-		\node[align=center] at (-1,3.75) (A)    {$\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$};
-		\node[roundnode2] at (-1,2.5) (u)    {$\Omega$};
-		\node[rectnode] at (-1,1) (y)    {$\bm{y}$};
-		\node[roundnode2] at (-3,2.5) (e)    {$\bm{\eta}$};
+		%\node[roundnode2] at (-1,3.75) (A)    {$\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$};
+			\node[roundnode2] at (-1,3.75) (A)    {$\bm{A}_{\bm{\Phi}} \bm{x}$};
+		%\node[roundnode2] at (-1,2.5) (u)    {$\Omega$};
+		\node[rectnode] at (-1,1.5) (y)    {$\bm{y}$};
+		%\node[roundnode2] at (-3,2.5) (e)    {$\bm{\eta}$};
 		\node[roundnode2] at (-7.5,6.5) (S)    {$\bm{\Sigma}$};
 		\node[roundnode2] at (-8.5,8) (s)    {$\gamma$};
 		\node[roundnode2] at (-6,8) (d)    {$\delta$};
@@ -384,23 +405,23 @@ See Tab.~\ref{tab:priors} for a summary of the prior distributions.
 		\node[roundnode2] at (3.25,8) (ct)    {$T_0$};
 		\node[roundnode2] at (4.25,8) (at)    {$\bm{a}$};
 		
-		\node[roundnode2] at (0,10) (b1hyp)    {$\bm{\theta}_{b}$};
+		%\node[roundnode2] at (0,10) (b1hyp)    {$\bm{\theta}_{b}$};
 		%\node[roundnode2] at (-2.5,10) (h1hyp)    {$\bm{\theta}_{h_{0}}$};
-		\node[roundnode2] at (-1.5,10) (p0hyp)    {$\bm{\theta}_{p_{0}}$};
-		\node[roundnode2] at (2,10) (hthyp)    {$\bm{\theta}_{\bm{h}_T}$};
-		\node[roundnode2] at (3.25,10) (cthyp)    {$\bm{\theta}_{T_{0}}$};
-		\node[roundnode2] at (4.5,10) (athyp)    {$\bm{\theta}_{\bm{a}}$};
+		%\node[roundnode2] at (-1.5,10) (p0hyp)    {$\bm{\theta}_{p_{0}}$};
+		%\node[roundnode2] at (2,10) (hthyp)    {$\bm{\theta}_{\bm{h}_T}$};
+		%\node[roundnode2] at (3.25,10) (cthyp)    {$\bm{\theta}_{T_{0}}$};
+		%\node[roundnode2] at (4.5,10) (athyp)    {$\bm{\theta}_{\bm{a}}$};
 		
-		\node[roundnode2] at (-8.5,10) (shyp)    {$\bm{\theta}_{\gamma}$};
-		\node[roundnode2] at (-6,10) (dhyp)    {$\bm{\theta}_{\delta}$};
+		%\node[roundnode2] at (-8.5,10) (shyp)    {$\bm{\theta}_{\gamma}$};
+		%\node[roundnode2] at (-6,10) (dhyp)    {$\bm{\theta}_{\delta}$};
 		
 		%Lines
 		
 		
-		\draw[->, very thick] (S) -- (e);
+		\draw[->, very thick] (S) -- (y);
 		\draw[->, mydotted, very thick] (s) -- (S);
-		\draw[->, very thick] (u) -- (y);
-		\draw[->, mydotted, very thick] (A) -- (u);
+		%\draw[->, very thick] (u) -- (y);
+		\draw[->, mydotted, very thick] (A) -- (y);
 		\draw[->, mydotted,  very thick] (x) -- (A);
 		\draw[->, mydotted, very thick] (p) -- (pt);
 		\draw[->, mydotted, very thick] (t) -- (pt);
@@ -410,7 +431,7 @@ See Tab.~\ref{tab:priors} for a summary of the prior distributions.
 		\draw[->, mydotted, very thick] (b1) -- (p); 
 		%\draw[->, very thick] (b2.south) -- (p.east); 
 		\draw[->, mydotted, very thick] (d) -- (Q); 
-		\draw[->, mydotted, very thick] (e) -- (y); 
+		%\draw[->, mydotted, very thick] (e) -- (y); 
 		
 		\draw[->, very thick] (Q.south east) -- (x.north west); 
 		\draw[->, mydotted, very thick] (ht.south) -- (t.north west);
@@ -418,14 +439,14 @@ See Tab.~\ref{tab:priors} for a summary of the prior distributions.
 		\draw[->, mydotted, very thick] (at.south) -- (t.north east);
 		
 		
-		\draw[->, very thick] (b1hyp) -- (b1);
+		%\draw[->, very thick] (b1hyp) -- (b1);
 		%\draw[->, very thick] (h1hyp) -- (h1);
-		\draw[->, very thick] (p0hyp) -- (p0);
-		\draw[->, very thick] (hthyp) -- (ht);
-		\draw[->, very thick] (cthyp) -- (ct);
-		\draw[->, very thick] (athyp) -- (at);
-		\draw[->, very thick] (shyp) -- (s);
-		\draw[->, very thick] (dhyp) -- (d);
+		%\draw[->, very thick] (p0hyp) -- (p0);
+		%\draw[->, very thick] (hthyp) -- (ht);
+		%\draw[->, very thick] (cthyp) -- (ct);
+		%\draw[->, very thick] (athyp) -- (at);
+		%\draw[->, very thick] (shyp) -- (s);
+		%\draw[->, very thick] (dhyp) -- (d);
 		
 		\node[fit=(s)(at),draw,dotted,black, rounded corners] {};
 		\node[align =center] at (-3.75,8) (T1) {hyper-parameters};
@@ -433,13 +454,13 @@ See Tab.~\ref{tab:priors} for a summary of the prior distributions.
 		\node[fit=(x)(T2),draw,dotted,black, rounded corners] {};
 		
 	\end{tikzpicture} 
-	\caption[Directed acyclic graph of Bayesian model for ozone $\bm{x}$, pressure $\bm{p}$ and temperature $\bm{T}$.]{DAG of the hierarchical Bayesian model including ozone $\bm{x}$, pressure $\bm{p}$ and temperature $\bm{T}$. The hyper-parameters $\bm{h}_T= \{ h_{T,1}, h_{T,2},h_{T,3},h_{T,4},h_{T,5},h_{T,6}\}$, $\bm{a} = \{ a_0, a_1, a_2,a_3,a_4,a_5,a_6\}$, $T_0$, $b$ and $p_0$ deterministically (dotted line) describe pressure through Eq.~\ref{eq:pressFunc} and temperature through Eq.~\ref{eq:tempFunc}. In this case, the hyper-parameters $\pi(p_0,b,T_0,\bm{h_T},\bm{a})$ are a normally distributed a-priori. That is why $\bm{\theta}_{\bm{h}_T},\bm{\theta}_{\bm{a}}, \bm{\theta}_{T_{0}},\bm{\theta}_{b} , \bm{\theta}_{p_0}$ represent means and STDs e.g.,~$b \sim \mathcal{N}(\mu_b, \sigma^2_b)$ and $\bm{\theta}_{b} = \{\mu_b, \sigma_b\}$.
-		As previously described in Sec.~\ref{sec:BayModelO3}, $\bm{\theta}_{\gamma}, \bm{\theta}_{\delta}$ determine gamma distributions e.g., $\gamma \sim \mathcal{T}(\alpha_{\gamma},\beta_{\gamma}) $ with $\bm{\theta}_{\gamma} = 	\{\alpha_{\gamma},\beta_{\gamma} \}$.
+	\caption[Directed acyclic graph of Bayesian model for ozone $\bm{x}$, pressure $\bm{p}$ and temperature $\bm{T}$.]{DAG of the hierarchical Bayesian model including ozone $\bm{x}$, pressure $\bm{p}$ and temperature $\bm{T}$. The hyper-parameters $\bm{h}_T= \{ h_{T,1}, h_{T,2},h_{T,3},h_{T,4},h_{T,5},h_{T,6}\}$, $\bm{a} = \{ a_0, a_1, a_2,a_3,a_4,a_5,a_6\}$, $T_0$, $b$ and $p_0$ deterministically (dotted line) describe pressure through Eq.~\ref{eq:pressFunc} and temperature through Eq.~\ref{eq:tempFunc}. The hyper-prior distributions $\pi(p_0,b,T_0,\bm{h_T},\bm{a})$ are a normal distributions, see Eq.~\ref{eq:aPrior} to Eq.~\ref{eq:lastprior}. 
+		%That is why $\bm{\theta}_{\bm{h}_T},\bm{\theta}_{\bm{a}}, \bm{\theta}_{T_{0}},\bm{\theta}_{b} , \bm{\theta}_{p_0}$ represent means and STDs e.g.,~$b \sim \mathcal{N}(\mu_b, \sigma^2_b)$ and $\bm{\theta}_{b} = \{\mu_b, \sigma_b\}$.
+		The hyper-prior distributions $\pi(\gamma)$ and $\pi(\delta)$ are gamma distributions, see Eq.~\ref{eq:priorDelFull} and Eq.~\ref{eq:priorGamFull}.
 		The ozone parameter $\bm{x}$ is statistically (solid line) described by the prior distribution $\bm{x}| \delta \sim \mathcal{N}(0,(\delta \bm{L})^{-1}) $. 
 		Here, the hyper-parameter $\delta$ accounts for smoothness in the ozone profile and defines the precision matrix $\bm{Q} = \delta \bm{L}$ as in Eq.~\ref{eq:GLapl}.
-		The approximated forward model $\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$ with $\bm{\Phi}  \coloneqq \{p_0, b, T_0,\bm{h}_T,\bm{a} \}$ maps the parameter and hyper-parameters to a space of all measurables $\Omega$. 
-		From that space, a data set $\bm{y}$ including some additive random noise $\bm{\eta}$ is observed (square box).
-		The noise covariance $\bm{\Sigma} = \gamma^{-1} \bm{I}$ of the random noise vector $\bm{\eta} \sim \mathcal{N}(0,\gamma^{-1} \bm{I} ) $ is defined by the hyper-parameter $\gamma$.}
+		The approximated forward model $\bm{A}_{\bm{\Phi}} \coloneqq \bm{M}\bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a})$ with $\bm{\Phi}  \coloneqq \{p_0, b, T_0,\bm{h}_T,\bm{a} \}$ describes the noise-free data $\bm{A}_{\bm{\Phi}} \bm{x}$.
+		An observed (square box) data set $\bm{y}$ includes some additive random noise described by the noise covariance $\bm{\Sigma} = \gamma^{-1} \bm{I}$.}
 	%Given the data we like to determine the marginal posterior distribution over the hyper-parameters $\pi(\bm{\theta}, \delta, \gamma | \bm{y})$ first and then the conditional posterior distribution for ozone $\pi(\bm{x}|\bm{\theta}, \delta, \gamma, \bm{y})$, utilising the MTC scheme.}
 \label{fig:DAGComplete}
 \end{figure}
@@ -464,7 +485,7 @@ The distributions of the hierarchical Bayesian framework are:
 	\bm{x}| \delta  &\sim \mathcal{N}(\bm{0}, (\delta \bm{L})^{-1} ) \label{eq:priorXFull} \\
 	\delta  &\sim \mathcal{T}(\alpha_{\delta} , \beta_{\delta} )\label{eq:priorDelFull} \\
 	\gamma  &\sim \mathcal{T}(\alpha_{\gamma}, \beta_{\gamma})\label{eq:priorGamFull} \\
-	\bm{a}  &\sim \mathcal{N}(\bm{\mu}_{\bm{a}}, \bm{\Sigma}_{\bm{a}})\\
+	\bm{a}  &\sim \mathcal{N}(\bm{\mu}_{\bm{a}}, \bm{\Sigma}_{\bm{a}})\label{eq:aPrior}\\
 	\bm{h}_{\bm{T}}  &\sim \mathcal{N}(\bm{\mu}_{T}, \bm{\Sigma}_{\bm{h}_T}) \\
 	T_0  &\sim \mathcal{N}(\mu_{T_0}, \sigma^2_{T_0} )\\
 	p_0  &\sim \mathcal{N}(\mu_{p_0}, \sigma^2_{p_0} )\\
@@ -588,21 +609,30 @@ Finally, we present posterior ozone, pressure and temperature profiles based on 
 
 \subsection{Linear Forward Model}
 
-Here as already mentioned the forward model is defined as:
+As already mentioned the forward model is defined as:
 \begin{align}
-	\bm{A}_{\bm{\Phi}} \coloneqq \bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a}) \, .
+	\bm{A}_{\bm{\Phi}} \coloneqq \bm{M} \bm{A}_L(p_0,b,T_0,\bm{h_T},\bm{a}) \, ,
 \end{align}
-
-Consequently, with the priors and simulated data, the marginal and conditional posterior are well defined and a Tensor-Train approximation of the marginal posterior is approximated using a tensor-train (TT) and the squared inverse Rosneblatt transform (SIRT) \cite{} is employed to generate samples from the marginal posterior.
-Conditioned on those samples the randomise then optimise (RTO) method \cite{} is used to sample from the full conditional posterior.
+where for now $\bm{M} = \bm{I}$.
+Consequently, with the priors and simulated data, the marginal and conditional posterior are well defined and a Tensor-Train approximation of the marginal posterior is approximated using a tensor-train (TT) and the squared inverse Rosenblatt transform (SIRT) \cite{} is employed to generate samples from the marginal posterior.
+Conditioned on those samples the randomise then optimise (RTO) method \cite{bardsley2015randomize} is used to sample from the full conditional posterior.
 
 \subsubsection{Tensor-Train Approximation of the Marginal Posterior}
+
 Instead of using conventional Markov-Chain Monte-Carlo methods to generate samples from the marginal posterior, it is approximated directly using a TT representation.
 In the following a brief introduction to the TT format is provided.
+\cite{cui2022deep}
+\cite{OSELEDETS2010TTCross}
+\cite{dolgov2020approximation}
+\cite{christentwalkaccess}
+\cite{alexDeepPy}
 
+Alternatively t-walk \cite{christen2010general}
+\paragraph{Background on Tensor-Train Approximation}
 Assume the target function is $\pi( \bm{\Phi},\delta,\gamma  | \bm{y})$ and the input $\bm{\theta} \coloneqq \{\bm{\Phi},\delta,\gamma  \} \in \mathbb{R}^d  $ is $d$-dimensional.
-First, a $d$-dimensional grid with $n$ grid points in each dimension the parameter space is defined by $n^d$ grid points.
-This is computationally not feasible to represent naively in a $d$-dimensional tensor, so a TT is employed to approximate the target function on that parameter space.
+First, a $d$-dimensional grid with $n$ grid points in each dimension the parameter space is defined.
+Representing the marginal posterior naively as a $d$-dimensional tensor with $n^d$ grid points is computationally not feasible. 
+Instead a TT can be employed to approximate the target function on that parameter space with far fewer function evaluations.
 In practice, a TT approximation may have negative or zero values in regions where the true function value is small and positive.
 That is why, to ensure non-negativity, we approximate the square root of $\pi( \bm{\theta}  | \bm{y})$ over the whole parameter space, which can be written as:
 \begin{align}
@@ -635,7 +665,7 @@ The marginal distribution of the first dimension is computed as:
 	\end{split}
 \end{align}
 where each of the integrals reduce a core $\bm{G}_k \in \mathbb{R}^{r_{k-1}\times n \times r_{k}}$ to $\int \bm{G}_k^2(\theta_k)  \, \diff \theta_k \in \mathbb{R}^{r_{k-1} \times r_{k}}$ and $z$ is a normalisation constant see \cite{}.
-If you want to use a quadrature scheme to calculate expectations, e.~g., $\mathbb{E}_{	\pi( \bm{\theta}  | \bm{y})} [f(\bm{\theta})]$, or are only interested in the individual marginals you are done here since other marginals can be computed the same way.
+If you want to use a quadrature scheme to calculate expectations, e.g., $\mathbb{E}_{	\pi( \bm{\theta}  | \bm{y})} [f(\bm{\theta})]$, or are only interested in the individual marginals you are done here since other marginals can be computed the same way.
 Note that, for a specific parameter value $\theta_k$ the core $\bm{G}^2_k(\theta_k)\in \mathbb{R}^{r_{k-1} \times r_{k}}$ is given according to the used interpolation basis, see, e.g., \cite{} for piecewise linear interpolation.
 
 The 'conditional marginal' defines a mapping from the uniform distribution to the target function, which is constructed via the cumulative distribution function (CDF)
@@ -683,12 +713,6 @@ then the approximation satisfies the error bound
 \end{align}
 
 
-To generate a TT for $\sqrt{\pi( \bm{\theta}  | \bm{y})}$ we use the \textcolor{red}{toolbox}, which implements the TT-Cross algorithm from \cite{}.
-As already mentioned we use the \textcolor{red}{TT toolbox}, which uses the TT-Cross amen scheme to approximate the target function.
-By exploratory analysis we define ranks $r=$, grid size $n=$ and do one sweep (left-to-right and right-to-left) in the TT-Cross.
-On a \textcolor{red}{Laptop} \textcolor{red}{xxxx} function evaluate takes about $1$min.
-To sample from the TT approximation we generate 2000 samples from with the SIRT scheme and correct those with an importance sampling step, as in \cite{}.
-
 In theory, this scheme provides independent samples, but in practice, every system produces correlated samples.
 To assess how efficient this scheme is, we define the Integrated Autocorrelation Times (IACT)
 
@@ -715,6 +739,13 @@ We can use
 as an error estimate.
 
 \clearpage
+\paragraph{Generate and use Tensor-Train Approximation}
+To generate a TT for $\sqrt{\pi( \bm{\theta}  | \bm{y})}$ we use the \textcolor{red}{toolbox}, which implements the TT-Cross algorithm from \cite{}.
+As already mentioned we use the \textcolor{red}{TT toolbox}, which uses the TT-Cross amen scheme to approximate the target function.
+By exploratory analysis we define ranks $r=$, grid size $n=$ and do one sweep (left-to-right and right-to-left) in the TT-Cross.
+On a \textcolor{red}{Laptop} \textcolor{red}{xxxx} function evaluate takes about $1$min.
+To sample from the TT approximation we generate 2000 samples from with the SIRT scheme and correct those with an importance sampling step, as in \cite{}.
+
 \begin{figure}[h!]% will be the left-side figure
 	\includegraphics[]{1stCorrPlot.png}
 	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from TT approximation of $\sqrt{\pi( \bm{\theta},\lambda,\gamma  | \bm{y})}$ via SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
@@ -779,7 +810,7 @@ This expression becomes
 %where the term $-\hat{\bm{A}}^T \bm{b}$ is decomposed as $\bm{v}_1 + \bm{v}_2$, 
 with $\bm{v}_1 \sim \mathcal{N}(\bm{0}, \bm{A}_{\bm{\Phi}}^T \bm{\Sigma}^{-1} \bm{A}_{\bm{\Phi}})$ and $\bm{v}_2 \sim \mathcal{N}(\bm{0}, \bm{Q}^{-1})$, representing independent Gaussian random variables~\cite{bardsley2012mcmc, fox2016fast}.
 
-More explicitly, conditioned on an independent $\lambda^{(k)},\gamma^{(k)} \sim \pi_{\lambda,\gamma }(\cdot | \bm{y})$, one independent full conditional posterior sample is given as  
+More explicitly, conditioned on an independent $\bm{\Phi}^{(k)}, \delta^{(k)},\gamma^{(k)} \sim \pi_{\bm{\theta}}(\cdot | \bm{y})$, one independent full conditional posterior sample is given as  
 \begin{align}
 	\label{eq:RTOAppl}
 	\bm{x}^{(k)} = 	\Big(  \underbrace{\gamma^{(k)} \bm{A}_{\bm{\Phi}}^T\bm{A}_{\bm{\Phi}} +  \delta^{(k)}\bm{L}}_{\bm{B}^{(k)}} \Big)^{-1} \left(  \gamma^{(k)}  \bm{A}_{\bm{\Phi}}^T\bm{y} +\sqrt{\gamma^{(k)}} \bm{A}_{\bm{\Phi}}^T \tilde{\bm{v}}_1 + \sqrt{\delta^{(k)}}\bm{L}^{1/2}\tilde{\bm{v}}_2\right)
@@ -802,20 +833,20 @@ The posterior samples are used to find an affine map.
 \subsection{Finding an Affine Map}
 \label{sec:affine}
 We find an affine map by creating the vector spaces $\bm{W}$ based on the linear forward model and $\bm{V}$ based on the non-linear forward model with ground truth pressure and temperature.
-More specifically $m-1$ samples $\bm{x}^{(j)} \sim \pi_{\bm{x}}(\cdot|\delta^{(j)} , \gamma^{(j)},\bm{y})$, for $j = 2, \dots,m$, from the posterior and the posterior mean $\bm{\mu}_{\bm{x}|\bm{y}}$ generate,
+More specifically $N$ samples $\bm{x}^{(k)} \sim \pi_{\bm{x}}(\cdot|\bm{\Phi}^{(k)}, \delta^{(k)} , \gamma^{(k)},\bm{y})$, for $k = 1, \dots,N$, from the posterior to generate,
 \begin{align*}
 	\bm{W} = \begin{bmatrix}
-		\vert& \vert&   &  \vert & & \vert \\
-		\bm{A}_{L}  \bm{\mu}_{\bm{x}|\bm{y}} & \bm{A}_{L}  \bm{x}^{(2)}   &  \cdots& \bm{A}_{L} \bm{x}^{(j)} &  \cdots & \bm{A}_{L} \bm{x}^{(m)} \\
-		\vert& \vert&   &  \vert & & \vert 
+		\vert&   &  \vert & & \vert \\
+		\bm{A}_{L}(\bm{\Phi}^{(1)})\bm{x}^{(1)}    &  \cdots& \bm{A}_{L}(\bm{\Phi}^{(k)}) \bm{x}^{(k)} &  \cdots & \bm{A}_{L}(\bm{\Phi}^{(N)}) \bm{x}^{(N)} \\
+		\vert&  &  \vert & & \vert 
 	\end{bmatrix}
-	\in \mathbb{R}^{m \times m}
+	\in \mathbb{R}^{m \times N}
 \end{align*}\noindent and
 \begin{align*}
 	\bm{V} = \begin{bmatrix}
-		\vert& \vert&   &  \vert & & \vert \\
-		\bm{A}(\bm{\mu}_{\bm{x}|\bm{y}} ) & \bm{A}(\bm{x}^{(2)}) &  \cdots& \bm{A}(\bm{x}^{(j)}) &  \cdots & \bm{A} (\bm{x}^{(m)})  \\
-		\vert&\vert&   &  \vert & & \vert 
+		\vert&   &  \vert & & \vert \\
+		 \bm{A}(\bm{\Phi}^{(1)}, \bm{x}^{(1)}) &  \cdots& \bm{A}(\bm{\Phi}^{(k)},\bm{x}^{(k)}) &  \cdots & \bm{A} (\bm{\Phi}^{(N)},\bm{x}^{(N)})  \\
+		\vert&   &  \vert & & \vert 
 	\end{bmatrix} = 
 	\begin{bmatrix}
 		\begin{array}{ccc}
@@ -825,15 +856,15 @@ More specifically $m-1$ samples $\bm{x}^{(j)} \sim \pi_{\bm{x}}(\cdot|\delta^{(j
 			& \vdots    &          \\
 			\horzbar &v_{m} & \horzbar
 		\end{array}
-	\end{bmatrix}\in \mathbb{R}^{m \times m} \, .
+	\end{bmatrix}\in \mathbb{R}^{m \times N} \, .
 \end{align*}
 Then the non-linear forward model is approximated as 
 \begin{align}
-	\bm{A}(\bm{x}) \approx \bm{M A}_L \bm{x} \, , \label{eq:AffineM}
+	\bm{A}(\bm{p},\bm{T},\bm{x}) \approx \bm{M A}_L(\bm{p},\bm{T}) \bm{x} \, , \label{eq:AffineM}
 \end{align}
 where we solve $v_j =r_j \bm{W}$ for each row $r_j$ in
 \begin{align*}
-	\bm{V}\bm{W}^{-1} = \bm{M} =
+	\bm{M} =
 	\begin{bmatrix}
 		\begin{array}{ccc}
 			\horzbar & r_{1} & \horzbar \\
@@ -844,14 +875,14 @@ where we solve $v_j =r_j \bm{W}$ for each row $r_j$ in
 		\end{array}
 	\end{bmatrix}\, \in \mathbb{R}^{m \times m} .
 \end{align*}
-using the Python function \texttt{numpy.linalg.solve}.
-This is feasible since every noise-free measurement is independent of each other, and then every row $v_j$ of $\bm{V} \in \mathbb{R}^{m \times m}$ is independent of each other as well.
-For an $\bm{x} = \bm{\mu}_{\bm{x}|\bm{y}} + \Delta \bm{x}$ we rewrite Eq.~\ref{eq:AffineM} to
-\begin{align}
-	\bm{A}(\bm{x})  \approx \underbrace{  \bm{M A}_L  \bm{\mu}_{\bm{x}|\bm{y}} }_{= \bm{A}( \bm{\mu}_{\bm{x}|\bm{y}} )  }+  \underbrace{\bm{M A}_L  \Delta \bm{x} }_{= \bm{A}^{\prime}( \bm{\mu}_{\bm{x}|\bm{y}} )  \Delta \bm{x} }\, \\
-	=    \underbrace{ \bm{A}^{\prime}( \bm{\mu}_{\bm{x}|\bm{y}} ) \bm{x}}_{ \bm{A}\bm{x}}  +  \underbrace{ \bm{A}( \bm{\mu}_{\bm{x}|\bm{y}} )  - \bm{A}^{\prime}( \bm{\mu}_{\bm{x}|\bm{y}} ) \bm{\mu}_{\bm{x}|\bm{y}}}_{  \bm{b}}
-\end{align}
-to show that $ \bm{M}:\bm{A}_L\bm{x} \rightarrow \bm{A}(\bm{x})$ is an affine map.
+using the Python function \textcolor{red}{\texttt{numpy.linalg.leassqauresolve}}.
+%This is feasible since every noise-free measurement is independent of each other, and then every row $v_j$ of $\bm{V} \in \mathbb{R}^{m \times m}$ is independent of each other as well.
+%For an $\bm{x} = \bm{\mu}_{\bm{x}|\bm{y}} + \Delta \bm{x}$ we rewrite Eq.~\ref{eq:AffineM} to
+%\begin{align}
+%	\bm{A}(\bm{x})  \approx \underbrace{  \bm{M A}_L  \bm{\mu}_{\bm{x}|\bm{y}} }_{= \bm{A}( \bm{\mu}_{\bm{x}|\bm{y}} )  }+  \underbrace{\bm{M A}_L  \Delta \bm{x} }_{= \bm{A}^{\prime}( \bm{\mu}_{\bm{x}|\bm{y}} )  \Delta \bm{x} }\, \\
+%	=    \underbrace{ \bm{A}^{\prime}( \bm{\mu}_{\bm{x}|\bm{y}} ) \bm{x}}_{ \bm{A}\bm{x}}  +  \underbrace{ \bm{A}( \bm{\mu}_{\bm{x}|\bm{y}} )  - \bm{A}^{\prime}( \bm{\mu}_{\bm{x}|\bm{y}} ) \bm{\mu}_{\bm{x}|\bm{y}}}_{  \bm{b}}
+%\end{align}
+%to show that $ \bm{M}:\bm{A}_L\bm{x} \rightarrow \bm{A}(\bm{x})$ is an affine map.
 
 \begin{figure}[ht!]
 	\centering
