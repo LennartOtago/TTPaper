@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.2.2 (1:1.2.2+202212051552+b0a8486541), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'TrueTemp.pdf' (pdf, eps, ps)
+%% Accompanies image file 'TrueTempPriorSampl.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,23 +53,23 @@
   \begin{picture}(1,1)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{TrueTemp.pdf}}%
-    \put(0.59209144,0.24375278){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_0$\end{tabular}}}}%
-    \put(0.5026402,0.26023353){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_1$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{TrueTempPriorSampl.pdf}}%
+    \put(0.67097627,0.22768926){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_0$\end{tabular}}}}%
+    \put(0.62005079,0.26968068){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_1$\end{tabular}}}}%
     \put(0.79558349,0.4367067){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_3$\end{tabular}}}}%
-    \put(0.91104233,0.57877111){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_4$\end{tabular}}}}%
-    \put(0.93244201,0.16612724){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_0$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{TrueTemp.pdf}}%
+    \put(0.90248606,0.59417642){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_4$\end{tabular}}}}%
+    \put(0.82398328,0.17127397){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{TrueTempPriorSampl.pdf}}%
     \put(0.17369263,0.83557076){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{T,6}$\end{tabular}}}}%
     \put(0.175827,0.56566855){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{T,4}$\end{tabular}}}}%
     \put(0.17727733,0.42412005){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{T,3}$\end{tabular}}}}%
     \put(0.17445384,0.2971232){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{T,2}$\end{tabular}}}}%
     \put(0.17590632,0.21195097){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{T,1}$\end{tabular}}}}%
     \put(0.17351382,0.60351877){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h_{T,5}$\end{tabular}}}}%
-    \put(0.3833149,0.93583549){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_6$\end{tabular}}}}%
-    \put(0.66820974,0.79935278){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_5$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{TrueTemp.pdf}}%
-    \put(0.57480805,0.33304071){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_2$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{TrueTemp.pdf}}%
+    \put(0.51992733,0.93495913){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_6$\end{tabular}}}}%
+    \put(0.76512343,0.782338){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_5$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{TrueTempPriorSampl.pdf}}%
+    \put(0.6585391,0.34433891){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{TrueTempPriorSampl.pdf}}%
   \end{picture}%
 \endgroup%

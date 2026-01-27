@@ -17,6 +17,10 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+\preamble{%
+\providecommand{\noopsort}[1]{}
+}
+
   \entry{bardsley2012mcmc}{article}{}
     \name{author}{1}{}{%
       {{hash=BJ}{%
@@ -176,6 +180,30 @@
     \field{year}{2019}
   \endentry
 
+  \entry{alexDeepPy}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=BeerdeBeerA}{%
+         family={{\noopsort{Beer}{de Beer}}},
+         familyi={{\noopsort{Beer}{de Beer}}},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {The University of Sydney}%
+    }
+    \strng{namehash}{BeerdeBeerA1}
+    \strng{fullhash}{BeerdeBeerA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{\url{https://deeptransport.github.io/deep-tensor-py/}}
+    \field{note}{[Online; accessed 26/01/26]}
+    \field{title}{deep-tensor-py -- A PyTorch implementation of the deep
+  inverse Rosenblatt transport (DIRT) algorithm}
+  \endentry
+
   \entry{Carlotti99}{article}{}
     \name{author}{2}{}{%
       {{hash=CM}{%
@@ -234,40 +262,6 @@
     \field{title}{The generalized law of total covariance}
     \field{journaltitle}{preprint}
     \field{year}{2022}
-  \endentry
-
-  \entry{christen2010general}{article}{}
-    \name{author}{2}{}{%
-      {{hash=CJA}{%
-         family={Christen},
-         familyi={C\bibinitperiod},
-         given={J.\bibnamedelima A.},
-         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
-      }}%
-      {{hash=FC}{%
-         family={Fox},
-         familyi={F\bibinitperiod},
-         given={C.},
-         giveni={C\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {International Society for Bayesian Analysis}%
-    }
-    \keyw{Bayesian inference, MCMC, simulation, t-walk}
-    \strng{namehash}{CJAFC1}
-    \strng{fullhash}{CJAFC1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{number}{2}
-    \field{pages}{263\bibrangedash 281}
-    \field{title}{{A general purpose sampling algorithm for continuous
-  distributions (the t-walk)}}
-    \field{volume}{5}
-    \field{journaltitle}{Bayesian Analysis}
-    \field{year}{2010}
   \endentry
 
   \entry{christentwalkaccess}{misc}{}
@@ -331,32 +325,6 @@
     \field{volume}{22}
     \field{journaltitle}{Foundations of Computational Mathematics}
     \field{year}{2022}
-  \endentry
-
-  \entry{alexDeepPy}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=dBA}{%
-         prefix={de},
-         prefixi={d\bibinitperiod},
-         family={Beer},
-         familyi={B\bibinitperiod},
-         given={Alex},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {The University of Sydney}%
-    }
-    \strng{namehash}{dBA1}
-    \strng{fullhash}{dBA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{howpublished}{\url{https://deeptransport.github.io/deep-tensor-py/}}
-    \field{note}{[Online; accessed 26/01/26]}
-    \field{title}{deep-tensor-py -- A PyTorch implementation of the deep
-  inverse Rosenblatt transport (DIRT) algorithm}
   \endentry
 
   \entry{dolgov2020approximation}{article}{}
@@ -833,6 +801,51 @@
     \field{year}{2020}
   \endentry
 
+  \entry{livesey2006retrieval}{article}{}
+    \name{author}{4}{}{%
+      {{hash=LNJ}{%
+         family={Livesey},
+         familyi={L\bibinitperiod},
+         given={Nathaniel\bibnamedelima J},
+         giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=VSW}{%
+         family={Van\bibnamedelima Snyder},
+         familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={W},
+         giveni={W},
+      }}%
+      {{hash=RWG}{%
+         family={Read},
+         familyi={R\bibinitperiod},
+         given={William\bibnamedelima G},
+         giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=WPA}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={Paul\bibnamedelima A},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{LNJ+1}
+    \strng{fullhash}{LNJVSWRWGWPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{5}
+    \field{pages}{1144\bibrangedash 1155}
+    \field{title}{Retrieval algorithms for the {EOS} Microwave limb sounder
+  {(MLS)}}
+    \field{volume}{44}
+    \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
+    \field{year}{2006}
+  \endentry
+
   \entry{livesey2008ozonecarbonmono}{article}{}
     \name{author}{37}{}{%
       {{hash=LNJ}{%
@@ -1059,7 +1072,7 @@
       }}%
     }
     \keyw{tropospheric composition, microwave, remote sounding}
-    \strng{namehash}{LNJ+1}
+    \strng{namehash}{LNJ+2}
   \strng{fullhash}{LNJFMJFLRWGLASMLJJHPHCWJWCRECDTDWHDBJFRAJRFJYBKBWLQBPVSSMJSWVSPCTRPWPAAMBEVCJPCLEDGSGRSJHJLMLJDNPOGBSGWWCR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
@@ -1100,6 +1113,88 @@
     \field{volume}{432}
     \field{journaltitle}{Linear Algebra and its Applications}
     \field{year}{2010}
+  \endentry
+
+  \entry{raspollini2021level}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{10}{}{%
+      {{hash=RP}{%
+         family={Raspollini},
+         familyi={R\bibinitperiod},
+         given={Piera},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=AE}{%
+         family={Arnone},
+         familyi={A\bibinitperiod},
+         given={Enrico},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Barbara},
+         familyi={B\bibinitperiod},
+         given={Flavio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Bianchini},
+         familyi={B\bibinitperiod},
+         given={Massimo},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CB}{%
+         family={Carli},
+         familyi={C\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Ceccherini},
+         familyi={C\bibinitperiod},
+         given={Simone},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CMP}{%
+         family={Chipperfield},
+         familyi={C\bibinitperiod},
+         given={Martyn\bibnamedelima P},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Dehn},
+         familyi={D\bibinitperiod},
+         given={Angelika},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DFS}{%
+         family={Della\bibnamedelima Fera},
+         familyi={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DBM}{%
+         family={Dinelli},
+         familyi={D\bibinitperiod},
+         given={Bianca\bibnamedelima Maria},
+         giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {G{\"o}ttingen, Germany}%
+    }
+    \strng{namehash}{RP+1}
+    \strng{fullhash}{RPAEBFBMCBCSCMPDADFSDBM+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{pages}{1\bibrangedash 46}
+    \field{title}{Level 2 processor and auxiliary data for {ESA} Version 8
+  final full mission analysis of {MIPAS} measurements on {ENVISAT}}
+    \field{volume}{2021}
+    \field{journaltitle}{Atmospheric Measurement Techniques Discussions}
+    \field{year}{2021}
   \endentry
 
   \entry{read2006forwardModel}{article}{}
@@ -1173,6 +1268,37 @@
     \list{location}{1}{%
       {Noordwijk}%
     }
+    \field{year}{2000}
+  \endentry
+
+  \entry{readings2000envisat}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=RC}{%
+         family={Readings},
+         familyi={R\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HRA}{%
+         family={Harris},
+         familyi={H\bibinitperiod},
+         given={R.\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ESA Publications Division}%
+    }
+    \strng{namehash}{RCHRA1}
+    \strng{fullhash}{RCHRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+  \field{howpublished}{\url{https://earth.esa.int/eogateway/documents/20142/37627/envisat-mipas-instrument-description.pdf}}
+    \field{note}{[Online; accessed 16/07/22]}
+    \field{title}{Envisat {MIPAS} an Instrument for Atmospheric Chemistry and
+  Climate Research}
     \field{year}{2000}
   \endentry
 
@@ -1257,7 +1383,7 @@
       {Optica Publishing Group}%
     }
     \strng{namehash}{RM+1}
-    \strng{fullhash}{RMCBCMvCTDBMDAFJMHMMPERPSGWRJ1}
+    \strng{fullhash}{RMCBCMCTvDBMDAFJMHMMPERPSGWRJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{R}
@@ -1270,6 +1396,33 @@
     \field{journaltitle}{Applied Optics}
     \field{month}{03}
     \field{year}{2000}
+  \endentry
+
+  \entry{rodgers1976retrieval}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RCD}{%
+         family={Rodgers},
+         familyi={R\bibinitperiod},
+         given={Clive\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{RCD1}
+    \strng{fullhash}{RCD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{4}
+    \field{pages}{609\bibrangedash 624}
+    \field{title}{Retrieval of atmospheric temperature and composition from
+  remote measurements of thermal radiation}
+    \field{volume}{14}
+    \field{journaltitle}{Reviews of Geophysics}
+    \field{year}{1976}
   \endentry
 
   \entry{rue2005gaussian}{book}{}

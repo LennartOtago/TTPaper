@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.2.2 (1:1.2.2+202212051552+b0a8486541), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'TruePress.pdf' (pdf, eps, ps)
+%% Accompanies image file 'TruePressPriorSampl.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,9 +53,9 @@
   \begin{picture}(1,1)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{TruePress.pdf}}%
-    \put(0.91783618,0.28602967){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$p_{0}$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{TruePress.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{TruePressPriorSampl.pdf}}%
+    \put(0.89093218,0.28993609){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$p_{0}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{TruePressPriorSampl.pdf}}%
     \put(0.38063439,0.51925388){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

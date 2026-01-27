@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.24)  26 JAN 2026 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.24)  27 JAN 2026 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -997,20 +997,7 @@ Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
 \@quotelevel=\count448
 \@quotereset=\count449
 
-(./main.aux
-
-LaTeX Warning: Label `fig:CorrPlot' multiply defined.
-
-
-LaTeX Warning: Label `fig:PressSampl' multiply defined.
-
-
-LaTeX Warning: Label `fig:TempSampl' multiply defined.
-
-
-LaTeX Warning: Label `fig:OzonSampl' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -1106,85 +1093,121 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (7.32129pt too wide) in paragraph at lines 76--76
-[]\OT1/cmr/bx/n/14.4 Linear in-verse Prob-lem -- Hi-er-ar-chi-cal Bayesian
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+[3] [4]
+Overfull \hbox (6.59782pt too wide) in paragraph at lines 212--217
+[]\OT1/cmr/m/n/10 In the case of a linear-Gaussian hi-er-ar-chi-cal Bayesian mo
+del, both the marginal
  []
 
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./LIMB.pdf_tex
-<LIMB.pdf, id=142, page=1, 422.57875pt x 127.47626pt>
+[5] (./LIMB.pdf_tex
+<LIMB.pdf, id=191, page=1, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 1>
 Package pdftex.def Info: LIMB.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=143, page=2, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=192, page=2, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 2>
 Package pdftex.def Info: LIMB.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=144, page=3, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=193, page=3, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 3>
 Package pdftex.def Info: LIMB.pdf , page3 used on input line 62.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=145, page=4, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=194, page=4, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 4>
 Package pdftex.def Info: LIMB.pdf , page4 used on input line 67.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=146, page=5, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=195, page=5, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 5>
 Package pdftex.def Info: LIMB.pdf , page5 used on input line 69.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=147, page=6, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=196, page=6, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 6>
 Package pdftex.def Info: LIMB.pdf , page6 used on input line 71.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=148, page=7, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=197, page=7, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 7>
 Package pdftex.def Info: LIMB.pdf , page7 used on input line 73.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=149, page=8, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=198, page=8, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 8>
 Package pdftex.def Info: LIMB.pdf , page8 used on input line 75.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=150, page=9, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=199, page=9, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 9>
 Package pdftex.def Info: LIMB.pdf , page9 used on input line 77.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=151, page=10, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=200, page=10, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 10>
 Package pdftex.def Info: LIMB.pdf , page10 used on input line 79.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=152, page=11, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=201, page=11, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 11>
 Package pdftex.def Info: LIMB.pdf , page11 used on input line 81.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=153, page=12, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=202, page=12, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 12>
 Package pdftex.def Info: LIMB.pdf , page12 used on input line 83.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
-<LIMB.pdf, id=154, page=13, 422.57875pt x 127.47626pt>
+<LIMB.pdf, id=203, page=13, 422.57875pt x 127.47626pt>
 File: LIMB.pdf Graphic file (type pdf)
 <use LIMB.pdf, page 13>
 Package pdftex.def Info: LIMB.pdf , page13 used on input line 85.
 (pdftex.def)             Requested size: 422.57874pt x 127.47981pt.
 )
-Overfull \hbox (77.57874pt too wide) in paragraph at lines 86--158
+Overfull \hbox (77.57874pt too wide) in paragraph at lines 86--237
  [][] 
  []
 
-[4
+[6
 
  <./LIMB.pdf> <./LIMB.pdf
 
@@ -1234,340 +1257,365 @@ fs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./LIMB.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
->] [5] [6] [7] [8]
+>]
 
-LaTeX Warning: Reference `fig:DAGO3' on page 9 undefined on input line 309.
+LaTeX Warning: Reference `fig:OzonSampl' on page 7 undefined on input line 286.
 
-(./TrueTemp.pdf_tex
-<TrueTemp.pdf, id=320, page=1, 315.57903pt x 315.57903pt>
-File: TrueTemp.pdf Graphic file (type pdf)
-<use TrueTemp.pdf, page 1>
-Package pdftex.def Info: TrueTemp.pdf , page1 used on input line 56.
+
+[7] [8] [9] [10] (./TrueTempPriorSampl.pdf_tex
+<TrueTempPriorSampl.pdf, id=365, page=1, 315.57903pt x 315.57903pt>
+File: TrueTempPriorSampl.pdf Graphic file (type pdf)
+<use TrueTempPriorSampl.pdf, page 1>
+Package pdftex.def Info: TrueTempPriorSampl.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
-<TrueTemp.pdf, id=321, page=2, 315.57903pt x 315.57903pt>
-File: TrueTemp.pdf Graphic file (type pdf)
-<use TrueTemp.pdf, page 2>
-Package pdftex.def Info: TrueTemp.pdf , page2 used on input line 62.
+<TrueTempPriorSampl.pdf, id=366, page=2, 315.57903pt x 315.57903pt>
+File: TrueTempPriorSampl.pdf Graphic file (type pdf)
+<use TrueTempPriorSampl.pdf, page 2>
+Package pdftex.def Info: TrueTempPriorSampl.pdf , page2 used on input line 62.
 (pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
-<TrueTemp.pdf, id=322, page=3, 315.57903pt x 315.57903pt>
-File: TrueTemp.pdf Graphic file (type pdf)
-<use TrueTemp.pdf, page 3>
-Package pdftex.def Info: TrueTemp.pdf , page3 used on input line 71.
+<TrueTempPriorSampl.pdf, id=367, page=3, 315.57903pt x 315.57903pt>
+File: TrueTempPriorSampl.pdf Graphic file (type pdf)
+<use TrueTempPriorSampl.pdf, page 3>
+Package pdftex.def Info: TrueTempPriorSampl.pdf , page3 used on input line 71.
 (pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
-<TrueTemp.pdf, id=323, page=4, 315.57903pt x 315.57903pt>
-File: TrueTemp.pdf Graphic file (type pdf)
-<use TrueTemp.pdf, page 4>
-Package pdftex.def Info: TrueTemp.pdf , page4 used on input line 73.
+<TrueTempPriorSampl.pdf, id=368, page=4, 315.57903pt x 315.57903pt>
+File: TrueTempPriorSampl.pdf Graphic file (type pdf)
+<use TrueTempPriorSampl.pdf, page 4>
+Package pdftex.def Info: TrueTempPriorSampl.pdf , page4 used on input line 73.
 (pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
-) (./TruePress.pdf_tex
-<TruePress.pdf, id=328, page=1, 315.57903pt x 315.57903pt>
-File: TruePress.pdf Graphic file (type pdf)
-<use TruePress.pdf, page 1>
-Package pdftex.def Info: TruePress.pdf , page1 used on input line 56.
+) (./TruePressPriorSampl.pdf_tex
+<TruePressPriorSampl.pdf, id=373, page=1, 315.57903pt x 315.57903pt>
+File: TruePressPriorSampl.pdf Graphic file (type pdf)
+<use TruePressPriorSampl.pdf, page 1>
+Package pdftex.def Info: TruePressPriorSampl.pdf , page1 used on input line 56.
+
 (pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
-<TruePress.pdf, id=329, page=2, 315.57903pt x 315.57903pt>
-File: TruePress.pdf Graphic file (type pdf)
-<use TruePress.pdf, page 2>
-Package pdftex.def Info: TruePress.pdf , page2 used on input line 58.
+<TruePressPriorSampl.pdf, id=374, page=2, 315.57903pt x 315.57903pt>
+File: TruePressPriorSampl.pdf Graphic file (type pdf)
+<use TruePressPriorSampl.pdf, page 2>
+Package pdftex.def Info: TruePressPriorSampl.pdf , page2 used on input line 58.
+
 (pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
 )
-<PriorTempOverPostMeanSigm.png, id=334, 315.0972pt x 315.0972pt>
+<PriorTempOverPostMeanSigm.png, id=379, 315.0972pt x 315.0972pt>
 File: PriorTempOverPostMeanSigm.png Graphic file (type png)
 <use PriorTempOverPostMeanSigm.png>
-Package pdftex.def Info: PriorTempOverPostMeanSigm.png  used on input line 350.
+Package pdftex.def Info: PriorTempOverPostMeanSigm.png  used on input line 431.
 
 (pdftex.def)             Requested size: 315.09642pt x 315.09642pt.
-
-
-LaTeX Warning: Reference `fig:HeightPriors' on page 9 undefined on input line 3
-66.
-
-[9
+[11
 
 ]
-
-LaTeX Warning: Reference `fig:OverTempPrior' on page 10 undefined on input line
- 374.
-
-
-Overfull \hbox (0.80377pt too wide) in paragraph at lines 377--378
-\OML/cmm/m/it/10 ^^M \OMS/cmsy/m/n/10 ^^X T\OT1/cmr/m/n/10 (\OML/cmm/b/it/10 ^^
-R[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 / \OML/cmm/m/it/10 ^^M[] [] []$ \OT1/cmr/
-m/n/10 and $\OML/cmm/m/it/10 ^^N \OMS/cmsy/m/n/10 ^^X T\OT1/cmr/m/n/10 (\OML/cm
-m/b/it/10 ^^R[]\OT1/cmr/m/n/10 )$ with $\OML/cmm/b/it/10 ^^R[] \OT1/cmr/m/n/10 
-= \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 []; ^^L[]\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/
-10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 []; ^^L[]\OMS/cmsy/m/n/10 g \OT1/cmr/m
-/n/10 =
+Overfull \hbox (1.98163pt too wide) in paragraph at lines 458--459
+\OML/cmm/m/it/10 ^^M \OMS/cmsy/m/n/10 ^^X T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 [
+]; ^^L[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 / \OML/cmm/m/it/10 ^^M[] [] []$ \OT1
+/cmr/m/n/10 and $\OML/cmm/m/it/10 ^^N \OMS/cmsy/m/n/10 ^^X T\OT1/cmr/m/n/10 (\O
+ML/cmm/m/it/10 []; ^^L[]\OT1/cmr/m/n/10 )$ with $(\OML/cmm/m/it/10 []; ^^L[]\
+OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 []; ^^L[]\OT1/cmr/m/n/10 ) =
  []
 
-[10 <./TrueTemp.pdf> <./TrueTemp.pdf
+[12 <./TrueTempPriorSampl.pdf> <./TrueTempPriorSampl.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./TrueTemp.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
-> <./TrueTemp.pdf
+pdfTeX warning: /usr/bin/pdflatex (file ./TrueTempPriorSampl.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+> <./TrueTempPriorSampl.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./TrueTemp.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
-> <./TrueTemp.pdf
+pdfTeX warning: /usr/bin/pdflatex (file ./TrueTempPriorSampl.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+> <./TrueTempPriorSampl.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./TrueTemp.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->] [11 <./TruePress.pdf> <./TruePress.pdf
+pdfTeX warning: /usr/bin/pdflatex (file ./TrueTempPriorSampl.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+>] [13 <./TruePressPriorSampl.pdf> <./TruePressPriorSampl.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./TruePress.pdf): PDF inclusion: multip
-le pdfs with page group included in a single page
->] [12 <./PriorTempOverPostMeanSigm.png>]
-Overfull \hbox (51.64584pt too wide) in paragraph at lines 456--463
+pdfTeX warning: /usr/bin/pdflatex (file ./TruePressPriorSampl.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>] [14 <./PriorTempOverPostMeanSigm.png>]
+Overfull \hbox (51.64584pt too wide) in paragraph at lines 537--544
  [][] 
  []
 
 
-Underfull \hbox (badness 3364) in paragraph at lines 463--463
-[]\OT1/cmr/m/n/10 Figure 5: |DAG of the hi-er-ar-chi-cal Bayesian model in-clud
+Underfull \hbox (badness 3364) in paragraph at lines 544--544
+[]\OT1/cmr/m/n/10 Figure 6: |DAG of the hi-er-ar-chi-cal Bayesian model in-clud
 -ing ozone
  []
 
 
-Underfull \hbox (badness 4060) in paragraph at lines 463--463
+Underfull \hbox (badness 4060) in paragraph at lines 544--544
 \OML/cmm/b/it/10 x$\OT1/cmr/m/n/10 , pres-sure $\OML/cmm/b/it/10 p$ \OT1/cmr/m/
 n/10 and tem-per-a-ture $\OML/cmm/b/it/10 T$\OT1/cmr/m/n/10 . The hyper-paramet
 ers $\OML/cmm/b/it/10 h[] \OT1/cmr/m/n/10 =
  []
 
 
-LaTeX Warning: Reference `sec:BayModelO3' on page 13 undefined on input line 46
-7.
+Overfull \hbox (39.19461pt too wide) in paragraph at lines 548--555
+\OT1/cmr/m/n/10 pen-den-cies be-tween the pa-ram-e-ter $\OML/cmm/b/it/10 x$ \OT
+1/cmr/m/n/10 and the hyper-parameters $\OML/cmm/b/it/10 ^^R \OT1/cmr/m/n/10 = \
+OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; b; T[]; \OML/cmm/b/it/10 h[]\OML/cmm/m/i
+t/10 ; \OML/cmm/b/it/10 a\OML/cmm/m/it/10 ; ^^N; ^^M\OMS/cmsy/m/n/10 g$\OT1/cmr
+/m/n/10 .
+ []
 
-[13
+[15
 
-] [14] [15] [16
+] [16] [17] [18
 
 ]
-<TTPapData.png, id=463, 315.579pt x 315.579pt>
+<TTPapData.png, id=511, 315.579pt x 315.579pt>
 File: TTPapData.png Graphic file (type png)
 <use TTPapData.png>
-Package pdftex.def Info: TTPapData.png  used on input line 605.
+Package pdftex.def Info: TTPapData.png  used on input line 693.
 (pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
- [17 <./TTPapData.png>] [18]
+ [19] [20 <./TTPapData.png>] [21
 
-LaTeX Warning: Reference `' on page 19 undefined on input line 681.
+] [22] [23] [24
 
-[19]
-
-LaTeX Warning: Reference `' on page 20 undefined on input line 704.
-
-[20]
-<1stCorrPlot.png, id=520, 420.8523pt x 599.841pt>
+]
+<1stCorrPlot.png, id=595, 420.8523pt x 599.841pt>
 File: 1stCorrPlot.png Graphic file (type png)
 <use 1stCorrPlot.png>
-Package pdftex.def Info: 1stCorrPlot.png  used on input line 750.
+Package pdftex.def Info: 1stCorrPlot.png  used on input line 838.
 (pdftex.def)             Requested size: 420.85127pt x 599.83952pt.
 
-Overfull \hbox (75.85127pt too wide) in paragraph at lines 750--751
+Overfull \hbox (75.85127pt too wide) in paragraph at lines 838--839
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 95.83952pt on input line 753.
+LaTeX Warning: Float too large for page by 95.83952pt on input line 841.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<2ndCorrPlot.png, id=521, 420.8523pt x 599.841pt>
+<2ndCorrPlot.png, id=596, 420.8523pt x 599.841pt>
 File: 2ndCorrPlot.png Graphic file (type png)
 <use 2ndCorrPlot.png>
-Package pdftex.def Info: 2ndCorrPlot.png  used on input line 755.
+Package pdftex.def Info: 2ndCorrPlot.png  used on input line 843.
 (pdftex.def)             Requested size: 420.85127pt x 599.83952pt.
 
-Overfull \hbox (75.85127pt too wide) in paragraph at lines 755--756
+Overfull \hbox (75.85127pt too wide) in paragraph at lines 843--844
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 84.78957pt on input line 757.
+LaTeX Warning: Float too large for page by 84.78957pt on input line 845.
 
-[21
-
-] [22 <./1stCorrPlot.png>] [23 <./2ndCorrPlot.png>]
-<TTPaperFirstPress.png, id=539, 315.579pt x 315.579pt>
-File: TTPaperFirstPress.png Graphic file (type png)
-<use TTPaperFirstPress.png>
-Package pdftex.def Info: TTPaperFirstPress.png  used on input line 763.
-(pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
-<TTPaperFirstTemp.png, id=540, 315.579pt x 315.579pt>
-File: TTPaperFirstTemp.png Graphic file (type png)
-<use TTPaperFirstTemp.png>
-Package pdftex.def Info: TTPaperFirstTemp.png  used on input line 770.
-(pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
-
-Overfull \hbox (34.06949pt too wide) detected at line 784
+[25 <./1stCorrPlot.png>] [26 <./2ndCorrPlot.png>]
+Overfull \hbox (34.06949pt too wide) detected at line 856
 []
  []
 
-[24
 
- <./TTPaperFirstPress.png>] [25 <./TTPaperFirstTemp.png>]
-<TTPaperFirstOzone.png, id=571, 315.579pt x 315.579pt>
+Overfull \hbox (34.54832pt too wide) in paragraph at lines 885--886
+[]\OT1/cmr/m/n/10 More ex-plic-itly, con-di-tioned on an in-de-pen-dent $\OT1/c
+mr/bx/n/10 ^^H[]\OML/cmm/m/it/10 ; ^^N[]; ^^M[] \OMS/cmsy/m/n/10 ^^X \OML/cmm/m
+/it/10 ^^Y\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 ^^H[]\OML/cmm/m/it/10 ; ^^N[]; ^^M[
+]\OMS/cmsy/m/n/10 j\OML/cmm/b/it/10 y\OT1/cmr/m/n/10 )$,
+ []
+
+<TTPaperFirstOzone.png, id=617, 315.579pt x 315.579pt>
 File: TTPaperFirstOzone.png Graphic file (type png)
 <use TTPaperFirstOzone.png>
-Package pdftex.def Info: TTPaperFirstOzone.png  used on input line 828.
+Package pdftex.def Info: TTPaperFirstOzone.png  used on input line 900.
 (pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
+[27
 
 
-LaTeX Warning: Reference `eq:MeanInt' on page 26 undefined on input line 829.
-
-
-LaTeX Warning: Reference `eq:MeanInt' on page 26 undefined on input line 829.
-
-
-Overfull \hbox (24.16124pt too wide) in paragraph at lines 835--837
-\OT1/cmr/m/n/10 pres-sure and tem-per-a-ture. More specif-i-cally $\OML/cmm/m/i
-t/10 N$ \OT1/cmr/m/n/10 sam-ples $\OML/cmm/b/it/10 x[] \OMS/cmsy/m/n/10 ^^X \OM
-L/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^Aj\OT1/cmr/bx/n/10 ^^H[]
-\OML/cmm/m/it/10 ; ^^N[]; ^^M[]; \OML/cmm/b/it/10 y\OT1/cmr/m/n/10 )$,
- []
-
-[26 <./TTPaperFirstOzone.png>]
-Overfull \hbox (68.70992pt too wide) detected at line 860
+]
+Overfull \hbox (68.70992pt too wide) detected at line 932
 []
  []
 
-<TTPapAssMap.png, id=579, 315.579pt x 315.579pt>
+[28 <./TTPaperFirstOzone.png>]
+<TTPapAssMap.png, id=637, 315.579pt x 315.579pt>
 File: TTPapAssMap.png Graphic file (type png)
 <use TTPapAssMap.png>
-Package pdftex.def Info: TTPapAssMap.png  used on input line 889.
+Package pdftex.def Info: TTPapAssMap.png  used on input line 961.
 (pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
-[27] [28 <./TTPapAssMap.png>]
-<1stCorrPlotAffine.png, id=593, 420.8523pt x 599.841pt>
-File: 1stCorrPlotAffine.png Graphic file (type png)
-<use 1stCorrPlotAffine.png>
-Package pdftex.def Info: 1stCorrPlotAffine.png  used on input line 907.
-(pdftex.def)             Requested size: 420.85127pt x 599.83952pt.
-
-Overfull \hbox (75.85127pt too wide) in paragraph at lines 907--908
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 95.83952pt on input line 910.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<2ndCorrPlotAffine.png, id=594, 420.8523pt x 599.841pt>
-File: 2ndCorrPlotAffine.png Graphic file (type png)
-<use 2ndCorrPlotAffine.png>
-Package pdftex.def Info: 2ndCorrPlotAffine.png  used on input line 912.
-(pdftex.def)             Requested size: 420.85127pt x 599.83952pt.
-
-Overfull \hbox (75.85127pt too wide) in paragraph at lines 912--913
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 84.78957pt on input line 914.
-
-[29 <./1stCorrPlotAffine.png>] [30 <./2ndCorrPlotAffine.png>]
-<TTPaperFirstPressAffine.png, id=607, 315.579pt x 315.579pt>
+ [29] [30 <./TTPapAssMap.png>]
+<TTPaperFirstPressAffine.png, id=657, 315.579pt x 315.579pt>
 File: TTPaperFirstPressAffine.png Graphic file (type png)
 <use TTPaperFirstPressAffine.png>
-Package pdftex.def Info: TTPaperFirstPressAffine.png  used on input line 919.
+Package pdftex.def Info: TTPaperFirstPressAffine.png  used on input line 991.
 (pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
-<TTPaperFirstTempAffine.png, id=608, 315.579pt x 315.579pt>
+<TTPaperFirstTempAffine.png, id=658, 315.579pt x 315.579pt>
 File: TTPaperFirstTempAffine.png Graphic file (type png)
 <use TTPaperFirstTempAffine.png>
-Package pdftex.def Info: TTPaperFirstTempAffine.png  used on input line 926.
+Package pdftex.def Info: TTPaperFirstTempAffine.png  used on input line 998.
+(pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
+<TTPaperFirstOzoneAffine.png, id=659, 315.579pt x 315.579pt>
+File: TTPaperFirstOzoneAffine.png Graphic file (type png)
+<use TTPaperFirstOzoneAffine.png>
+Package pdftex.def Info: TTPaperFirstOzoneAffine.png  used on input line 1005.
 (pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
  [31
 
-
- <./TTPaperFirstPressAffine.png>] [32 <./TTPaperFirstTempAffine.png>]
-<TTPaperFirstOzoneAffine.png, id=622, 315.579pt x 315.579pt>
-File: TTPaperFirstOzoneAffine.png Graphic file (type png)
-<use TTPaperFirstOzoneAffine.png>
-Package pdftex.def Info: TTPaperFirstOzoneAffine.png  used on input line 939.
-(pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
-
-
-LaTeX Warning: Reference `eq:MeanInt' on page 33 undefined on input line 940.
-
-
-LaTeX Warning: Reference `eq:MeanInt' on page 33 undefined on input line 940.
-
-[33
-
- <./TTPaperFirstOzoneAffine.png>]
+ <./TTPaperFirstPressAffine.png>] [32 <./TTPaperFirstTempAffine.png>] [33 <./TT
+PaperFirstOzoneAffine.png>]
 
 Package biblatex Warning: Name format 'last-first' deprecated.
 (biblatex)                Please use 'family-given' instead.
 (biblatex)                Using 'family-given' now.
 
 
-Overfull \hbox (20.4262pt too wide) in paragraph at lines 952--952
+Overfull \hbox (20.4262pt too wide) in paragraph at lines 1020--1020
 []\OT1/cmr/m/n/10 Bardsley, J., Sep-pa-nen, A., Solo-nen, A., Haario, H., and K
 ai-pio, J. ``Randomize-
  []
 
 
-Overfull \hbox (7.88931pt too wide) in paragraph at lines 952--952
+Overfull \hbox (7.88931pt too wide) in paragraph at lines 1020--1020
 \OT1/cmr/m/n/10 prob-lem''. In: \OT1/cmr/m/it/10 SIAM/ASA Jour-nal on Un-cer-ta
 inty Quan-tifi-ca-tion \OT1/cmr/m/n/10 4.1 (2016),
  []
 
-[34
 
-]
-Overfull \hbox (4.447pt too wide) in paragraph at lines 952--952
+Overfull \hbox (4.447pt too wide) in paragraph at lines 1020--1020
 \OT1/cmr/m/n/10 In: \OT1/cmr/m/it/10 Jour-nal of Quan-ti-ta-tive Spec-troscopy 
 and Ra-dia-tive Trans-fer \OT1/cmr/m/n/10 277.107949
  []
 
-[35] [36] (./main.aux)
+[34
+
+] [35] (./TrueTemp.pdf_tex
+<TrueTemp.pdf, id=701, page=1, 315.57903pt x 315.57903pt>
+File: TrueTemp.pdf Graphic file (type pdf)
+<use TrueTemp.pdf, page 1>
+Package pdftex.def Info: TrueTemp.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
+<TrueTemp.pdf, id=702, page=2, 315.57903pt x 315.57903pt>
+File: TrueTemp.pdf Graphic file (type pdf)
+<use TrueTemp.pdf, page 2>
+Package pdftex.def Info: TrueTemp.pdf , page2 used on input line 62.
+(pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
+<TrueTemp.pdf, id=703, page=3, 315.57903pt x 315.57903pt>
+File: TrueTemp.pdf Graphic file (type pdf)
+<use TrueTemp.pdf, page 3>
+Package pdftex.def Info: TrueTemp.pdf , page3 used on input line 71.
+(pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
+<TrueTemp.pdf, id=704, page=4, 315.57903pt x 315.57903pt>
+File: TrueTemp.pdf Graphic file (type pdf)
+<use TrueTemp.pdf, page 4>
+Package pdftex.def Info: TrueTemp.pdf , page4 used on input line 73.
+(pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
+) (./TruePress.pdf_tex
+<TruePress.pdf, id=707, page=1, 315.57903pt x 315.57903pt>
+File: TruePress.pdf Graphic file (type pdf)
+<use TruePress.pdf, page 1>
+Package pdftex.def Info: TruePress.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
+<TruePress.pdf, id=708, page=2, 315.57903pt x 315.57903pt>
+File: TruePress.pdf Graphic file (type pdf)
+<use TruePress.pdf, page 2>
+Package pdftex.def Info: TruePress.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 315.57901pt x 315.59268pt.
+) [36] [37 <./TrueTemp.pdf> <./TrueTemp.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./TrueTemp.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./TrueTemp.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./TrueTemp.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+> <./TrueTemp.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./TrueTemp.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] [38 <./TruePress.pdf> <./TruePress.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./TruePress.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>]
+<TTPaperFirstPress.png, id=737, 315.579pt x 315.579pt>
+File: TTPaperFirstPress.png Graphic file (type png)
+<use TTPaperFirstPress.png>
+Package pdftex.def Info: TTPaperFirstPress.png  used on input line 1041.
+(pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
+<TTPaperFirstTemp.png, id=738, 315.579pt x 315.579pt>
+File: TTPaperFirstTemp.png Graphic file (type png)
+<use TTPaperFirstTemp.png>
+Package pdftex.def Info: TTPaperFirstTemp.png  used on input line 1048.
+(pdftex.def)             Requested size: 315.57822pt x 315.57822pt.
+ [39
+
+ <./TTPaperFirstPress.png>] [40 <./TTPaperFirstTemp.png>]
+<1stCorrPlotAffine.png, id=751, 420.8523pt x 599.841pt>
+File: 1stCorrPlotAffine.png Graphic file (type png)
+<use 1stCorrPlotAffine.png>
+Package pdftex.def Info: 1stCorrPlotAffine.png  used on input line 1056.
+(pdftex.def)             Requested size: 420.85127pt x 599.83952pt.
+
+Overfull \hbox (75.85127pt too wide) in paragraph at lines 1056--1057
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 95.83952pt on input line 1059.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<2ndCorrPlotAffine.png, id=752, 420.8523pt x 599.841pt>
+File: 2ndCorrPlotAffine.png Graphic file (type png)
+<use 2ndCorrPlotAffine.png>
+Package pdftex.def Info: 2ndCorrPlotAffine.png  used on input line 1061.
+(pdftex.def)             Requested size: 420.85127pt x 599.83952pt.
+
+Overfull \hbox (75.85127pt too wide) in paragraph at lines 1061--1062
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 84.78957pt on input line 1063.
+
+[41
+
+] [42 <./1stCorrPlotAffine.png>] [43 <./2ndCorrPlotAffine.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D35BD14617B84CC001D80798EA2F86F;4056.
+(rerunfilecheck)             Checksum: 48988994C2492C154E0ABEA97A60FF48;4407.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33420 strings out of 478287
- 648698 string characters out of 5849289
- 1271756 words of memory out of 5000000
- 50911 multiletter control sequences out of 15000+600000
- 482882 words of font info for 78 fonts, out of 8000000 for 9000
+ 33558 strings out of 478287
+ 651828 string characters out of 5849289
+ 1272182 words of memory out of 5000000
+ 51025 multiletter control sequences out of 15000+600000
+ 483489 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,117p,1818b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/
-cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (36 pages, 3695702 bytes).
+/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (43 pages, 3877936 bytes).
 PDF statistics:
- 784 PDF objects out of 1000 (max. 8388607)
- 617 compressed objects within 7 object streams
- 177 named destinations out of 1000 (max. 500000)
- 333 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 916 PDF objects out of 1000 (max. 8388607)
+ 727 compressed objects within 8 object streams
+ 193 named destinations out of 1000 (max. 500000)
+ 395 words of extra memory for PDF output out of 10000 (max. 10000000)
 
