@@ -609,7 +609,7 @@ The hyper-prior scales, shapes, means and variances are explicitly given in Tab.
 		$a_{6}$ & $\mathcal{N}(-2,(0.01)^2)$ &-2.04 &-1.96&$\bm{T}$\\
 		\hline
 	\end{tabular}
-	\caption[Summary of relevant parameter characteristics, bounds and sampling statistics.]{Summary of relevant parameter and hyper-parameters bounds and statistics, ordered as in the TT format according to their correlation structure. We denote $\mathcal{N}(\mu= \text{mean},\sigma^2= \text{variance})$ as the Gaussian and $\mathcal{T}(\alpha = \text{scale}, \beta = \text{rate})$ as the Gamma distribution. The IACT $\tau_{\text{int}}$ from marginal posterior samples via the t-walk is twice the value provided by~\cite{UwerrM, drikHesse}.}
+	\caption[Summary of relevant parameter characteristics, bounds and sampling statistics.]{Summary of relevant parameter and hyper-parameters bounds and statistics, ordered as in the TT format according to their correlation structure. We denote $\mathcal{N}(\mu= \text{mean},\sigma^2= \text{variance})$ as the Gaussian and $\mathcal{T}(\alpha = \text{scale}, \beta = \text{rate})$ as the Gamma distribution.}
 	\label{tab:priors}
 \end{table}
 \clearpage
@@ -825,24 +825,23 @@ U. Wolff~\cite{wolff2004monte} (and the Python implementation by D. Hesse~\cite{
 \paragraph{Generate and use Tensor-Train Approximation}
 To generate a TT for $\sqrt{\pi( \bm{\theta}  | \bm{y})}$ we use the \texttt{deep-tensor-py} package~\cite{alexDeepPy}, which implements the TT-cross algorithm~\cite{OSELEDETS2010TTCross} to generate a TT approximation.
 Further, A. de Beer~\cite{alexDeepPy} has implemented the SIRT scheme from~\cite{cui2022deep}.
-By exploratory analysis we define ranks $r=10$ manually and set the grid size $n=30$ for the 18-dimensional parameter space, see Tab.\ref{tab:priors} for the grid bounds.
-Then one sweep (left-to-right and right-to-left) in the TT-cross with first order Legendre polynomials as basis functions provides an accurate enough function approximation of the marginal posterior.
-This requires \textcolor{red}{$xx$} function evaluations.
+By exploratory analysis we define ranks \textcolor{red}{$r=[10,10,\dots,2]$} manually and set the grid size $n=30$ for the 18-dimensional parameter space, see Tab.\ref{tab:priors} for the grid bounds.
+Then one sweep (left-to-right and right-to-left) by the TT-cross with first order Legendre polynomials as basis functions provides an accurate enough function approximation of the marginal posterior.
+This requires \textcolor{red}{$xxxx$} function evaluations.
 Note that we arranged the hyper-parameter space so that highly correlated hyper-parameters are adjacent.
 The Python code \textcolor{red}{will be}/is available here: \url{https://deeptransport.github.io/deep-tensor-py/examples/}.
 To generate a TT approximation and $\approx 2000$ samples, see Fig.~\ref{fig:CorrPlot}, from the marginal posterior including the MH-correction step takes $\approx 1$min on a basic laptop.
-According to the IACTs, see Tab.~\ref{tab:priors}, every second sample is an independent sample from the marginal posterior.
-Once the TT is formed 2 function evaluations per independent sample are required.
+The maximum IACT is $1.2 \pm 0.1$, so every second sample via the SIRT-MH scheme is an independent sample from the marginal posterior.
 Conditioned on an independent marginal posterior sample $\bm{\theta}^{(k)} \sim \pi(\bm{\theta}| \bm{y})$ the RTO method can be used to generate a full conditional posterior sample $\bm{x}^{(k)} \sim \pi(\bm{x}|\bm{\theta}^{(k)}, \bm{y})$.  
 \clearpage
 \begin{figure}[h!]% will be the left-side figure
 	\includegraphics[]{1stCorrPlot.png}
-	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from TT approximation of $\sqrt{\pi( \bm{\theta},\lambda,\gamma  | \bm{y})}$ via SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
+	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from the marginal posterior $\pi(\bm{\Phi},\delta,\gamma|\bm{y})$ based on the linearised forward model via the SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
 	\label{fig:CorrPlot}
 \end{figure}
 \begin{figure}% will be the right-side figure
 	\includegraphics[]{2ndCorrPlot.png}
-	\caption*{Correlation plot of samples from TT-approximation of $\sqrt{\pi(\bm{\theta},\lambda,\gamma | \bm{y})}$ via SIRT-MH scheme.}
+	\caption*{Correlation plot of samples from the marginal posterior $\pi(\bm{\Phi},\delta,\gamma|\bm{y})$ based on the linearised forward model via the SIRT-MH scheme.}
 \end{figure}
 \clearpage
 \subsubsection{Samples from the Full Conditional Posterior}
@@ -983,28 +982,28 @@ We repeat the exact same procedure as described in Sec.~\ref{subsec:ResLinForMod
 The max IACT is $\approx 1.2\pm 0.1$, hence every second marginal posterior sample generated by the SIRT scheme presents an independent sample from the marginal posterior.
 The independent marginal posterior samples give posterior pressure and temperature profiles through their respective functions, see Eq.~\ref{eq:pressFunc} and Eq.~\ref{eq:tempFunc}.
 The posterior pressure profiles are plotted in Fig.~\ref{fig:AffPressSampl} and the posterior temperature profiles in Fig.~\ref{fig:AffTempSampl}.
+Compared to the temperature prior profiles in Fig.~\ref{fig:PriorTemp} the posterior profiles do not change.
+The posterior pressure profiles are slightly larger than its ground truth.
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[]{TTPaperFirstPressAffine.png}
-	\caption[]{30 posterior pressure samples based on the approximated model.}
+	\caption[]{30 posterior pressure profiles from marginal posterior samples based on the approximated model via Eq.~\ref{eq:pressFunc}.}
 	\label{fig:AffPressSampl}
 \end{figure}
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[]{TTPaperFirstTempAffine.png}
-	\caption[]{29 posterior temperature samples based on the approximated model.}
+	\caption[]{30 posterior temperature profiles from marginal posterior samples based on the approximated model via Eq.~\ref{eq:tempFunc}.}
 	\label{fig:AffTempSampl}
 \end{figure}
 \clearpage
 
-Next, with the RTO method as in Sec.\ref{subsec:FullCondPost} full conditional posterior ozone samples are obtained and plotted in Fig.~\ref{fig:AffOzonSampl}.
-
-We can see that ozone and pressure are higly correlated.
-the pressure is sligkty off
-the ozone peak is much lowe
-the second ozone peak is not recovered.
+Next, with the RTO method as in Sec.~\ref{subsec:FullCondPost} full conditional posterior ozone samples are obtained and plotted in Fig.~\ref{fig:AffOzonSampl}.
+As already indicated by Fig.~\ref{fig:CorrPlot} the pressure values and ozone concentrations are highly correlated.
+That is why if the pressure values are slightly larger than its ground truth, see Fig.~\ref{fig:AffPressSampl}, then the ozone concentration is much lower than its ground truth, see Fig.~\ref{fig:AffOzonSampl}.
+Further, the posterior ozone profiles do not include a second ozone peak from the ground truth.
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[]{TTPaperFirstOzoneAffine.png}
@@ -1016,7 +1015,7 @@ the second ozone peak is not recovered.
 \section{Conclusion}
 Including ozone, pressure and temperature within the inversion process, we show that ozone and pressure are highly correlated.
 The results show that a small change of pressure does have a big influence on the ozone profile.
-One could extend the current parametrised model of pressure to a non-parametric model, see e.g., \cite{RenateNonPara2026}.
+To allow more variability of the pressure profile, one could combine the current parametrised model of pressure with a non-parametric model, see e.g., \cite{RenateNonPara2026}.
 It is clear the data is uninformative about the ozone concentration in higher atmospheric regions and the second ozone peak is not recovered.
 Further we show that the model and the data do not contain information about the temperature profile.
 
@@ -1065,12 +1064,12 @@ Once the TT is composed every second sample generated by the SIRT scheme present
 \subsection{Approximated Forward Model}
 \begin{figure}[h!]% will be the left-side figure
 	\includegraphics[]{1stCorrPlotAffine.png}
-	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from TT approximation of $\sqrt{\pi( \bm{\theta},\lambda,\gamma  | \bm{y})}$ via SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
+	\caption[Correlation plot of samples from TT approximation]{Plot of 1000 independent samples from the marginal posterior $\pi(\bm{\Phi},\delta,\gamma|\bm{y})$ based on the approximated forward model via the SIRT-MH scheme. We plot the Pearson correlation coefficient ranging from $-1$ to $1$ for each hyper-parameter pair.}
 	\label{fig:AffCorrPlot}
 \end{figure}
 \begin{figure}% will be the right-side figure
 	\includegraphics[]{2ndCorrPlotAffine.png}
-	\caption*{Correlation plot of samples from TT-approximation of $\sqrt{\pi(\bm{\theta},\lambda,\gamma | \bm{y})}$ via SIRT-MH scheme.}
+	\caption*{Correlation plot of samples from the marginal posterior $\pi(\bm{\Phi},\delta,\gamma|\bm{y})$ based on the approximated forward model via the SIRT-MH scheme.}
 \end{figure}
 \clearpage
 
