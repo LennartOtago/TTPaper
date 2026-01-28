@@ -21,6 +21,58 @@
 \providecommand{\noopsort}[1]{}
 }
 
+  \entry{RenateNonPara2026}{article}{}
+    \name{author}{5}{}{%
+      {{hash=AN}{%
+         family={Aimen},
+         familyi={A\bibinitperiod},
+         given={Nazeela},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MRP}{%
+         family={Maturana-Russel},
+         familyi={M\bibinithyphendelim R\bibinitperiod},
+         given={Patricio},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=VA}{%
+         family={Vajpeyi},
+         familyi={V\bibinitperiod},
+         given={Avi},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CN}{%
+         family={Christensen},
+         familyi={C\bibinitperiod},
+         given={Nelson},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Meyer},
+         familyi={M\bibinitperiod},
+         given={Renate},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{AN+1}
+    \strng{fullhash}{ANMRPVACNMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{issue}{2}
+    \field{pages}{024022}
+    \field{title}{Bayesian power spectral density estimation for LISA noise
+  based on penalized splines with a parametric boost}
+    \field{volume}{113}
+    \field{journaltitle}{Phys. Rev. D}
+    \field{year}{2026}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{bardsley2012mcmc}{article}{}
     \name{author}{1}{}{%
       {{hash=BJ}{%
@@ -799,6 +851,37 @@
     \field{volume}{7}
     \field{journaltitle}{Earth and Space Science}
     \field{year}{2020}
+  \endentry
+
+  \entry{EOSMLSRetrival2004}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=LNJ}{%
+         family={Livesey},
+         familyi={L\bibinitperiod},
+         given={Nathaniel\bibnamedelima J.},
+         giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SWV}{%
+         family={Snyder},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima Van},
+         giveni={W\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Jet Propulsion Laboratory, California Institute of Technology}%
+    }
+    \strng{namehash}{LNJSWV1}
+    \strng{fullhash}{LNJSWV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+  \field{howpublished}{\url{https://mls.jpl.nasa.gov/data/eos_algorithm_atbd.pdf}}
+    \field{note}{[Online; accessed 28/01/26]}
+    \field{title}{Earth Observing System (EOS) Microwave Limb Sounder (MLS)
+  Retrieval Processes Algorithm -- Theoretical Basis -- Version 2.0}
+    \field{year}{2004}
   \endentry
 
   \entry{livesey2006retrieval}{article}{}

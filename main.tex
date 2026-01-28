@@ -62,14 +62,14 @@
 \maketitle
 \begin{abstract}
 	The radiative transfer equation (RTE) for a stratospheric limb-sounder measuring thermal radiation of ozone presents a weakly non-linear forward map.
-	Given some simulated data, this paper presents a hierarchical Bayesian framework to infer ozone concentrations as well as the pressure and temperature profile and some other hyper-parameters such as the noise covariance and the ozone smoothness.
+	Given some simulated data, this paper presents a hierarchical Bayesian framework to infer pressure, temperature and ozone concentrations values and some other hyper-parameters such as the noise covariance and the ozone smoothness.
 	Thereby, the non-linear forward model is approximated with an affine map and the linearised RTE, which in combination with the marginal-then-conditional scheme~\cite{fox2016fast} and a tensor-train approximation of the marginal posterior over the hyper-parameters enables efficient inference.
 	
 	
 \end{abstract}
 
 \section{Introduction}
-There are satellites, which orbit around the earth at a height of around 500km above the ground, carry measurement devices to determine trace gas concentrations in the stratosphere.
+There are satellites, which orbit around the earth at a height of around 500km above the ground, that carry measurement devices to determine trace gas concentrations in the stratosphere.
 More specifically, atmospheric limb-sounders are pointing through the atmosphere and detect thermal radiation of trace gases, e.g., ozone.
 Examples of such limb-sounders are the Microwave
 Limb Sounder (MLS) on NASA’s Aura mission~\cite{waters2006earth} and the
@@ -80,40 +80,41 @@ Measurements of such devices can be described by the radiative transfer equation
 This path integral includes an absorption term accounting for the re-attenuation of the thermal radiation along the satellite's line of sight.
 That makes inferring the trace gas concentration from a set of measurements a non-linear inverse problem.
 
-Existing methods use regularisation methods to retrieve trace gas concentration from measurements~\cite{rodgers1976retrieval, livesey2006retrieval, raspollini2021level}.
+Existing frameworks use regularisation methods to retrieve trace gas concentration from measurements~\cite{rodgers1976retrieval, livesey2006retrieval, raspollini2021level}.
 These methods do not include hyper-parameters, such as noise covariance, and produce biased results~\cite{Froidevaux2008snrozone}.
-Further in the current data analysis pressure and temperature values are taken from 3rd party measurements and their uncertainties are not included.
+Additionally, atmospheric states such as pressure and temperature are retrieved from some previous measurements.
+Conditioned on those estimates further analysis is carried out to, e.g., retrieve ozone concentrations \cite{livesey2006retrieval,EOSMLSRetrival2004}.
 
-In this paper we develop a model so that pressure and temperature are treated as unknowns and are included within the inversion process.
-In doing so, we parametrise the pressure and temperature profile, whereas a non-paremeteric model for the ozone is used.
+In this paper we develop a framework where pressure and temperature are treated as unknowns and are included within the modelling and inversion process.
+In doing so, the pressure and temperature profile is parametrise, whereas a non-paremeteric model for the ozone is used.
 Firstly, given some simulated data, we treat this non-linear problem as a linear problem by neglecting the absorption term in the RTE.
-A linear-Gaussian hierarchical Bayesian framework is employed to infer the ozone concentration in the stratosphere as well as provide pressure and temperature values.
+A linear-Gaussian hierarchical Bayesian framework is employed to infer the ozone concentration in the stratosphere and to provide pressure and temperature values.
 This includes establishing a hierarchical structure and classifying hyper-parameters and parameters.
 For efficient inference we employ the marginal-then-conditional (MTC) scheme as in~\cite{fox2016fast} and extend it to include model describing hyper-parameter related to pressure and temperature.
-This gives a low-dimensional marginal posterior probability distribution over the hyper-parameters and a high-dimensional conditional posterior probability for the ozone parameter.
-We show that approximating the marginal posterior on a grid using a functional tensor-train (TT) is an efficient alternative to conventional sampling-based methods to explore the hyper-parameters space.
-To quantify the conditional posterior variance, samples from the conditional posterior are drawn via the randomise-then-optimise (RTO) scheme~\cite{bardsley2012mcmc}.
-
+This gives a marginal posterior probability distribution over the hyper-parameters and a high-dimensional conditional posterior probability for the ozone parameter.
+We show that approximating the marginal posterior on a grid using a functional tensor-train (TT) is an efficient alternative to conventional sampling-based methods to generate hyper-parameter samples from the marginal posterior.
+Conditioned on hyper-parameter samples, ozone samples from the full conditional posterior are drawn via the randomise-then-optimise (RTO) scheme~\cite{bardsley2012mcmc}.
 Using the results of the linearised problem, an affine map approximating the non-linear forward model is obtained.
-We employ the same hierarchical Bayesian framework as previously used, but with the approximated forward model, to quantify the unbiased mean and variance of the posterior ozone profile.
+We employ the same hierarchical Bayesian framework as previously used, but with the approximated forward model, to quantify the posterior mean and variance of pressure, temperature and ozone.
 
 All programming and analysis in this paper are done in Python, and the reported computation times are taken on a MacBook Pro from 2019 with a 2.4 GHz quad-core Intel i5 processor.
+The code will be/is available here: \url{https://deeptransport.github.io/deep-tensor-py/examples/}.
 
 
-\section{Introduction}
-\begin{itemize}
-	\item Hierarchical Bayesian modelling including Pressure and Temperature
-	\item parametrised model for pressure and temperature and non-parametric model for ozone
-    \item Forward model ozone limb-sounding as linear inverse problem
-    \item Marginal and full conditional posterior explicitly formulated
-    \item samples from full conditional posterior via IRT
-    \item sample-based affine map
-    \item same procedure again
-    \item full posterior mean and sample-based variance do not capture second ozone peak
-    \item Pressure and Ozone highly correlated
-    \item All programming and analysis in this thesis are done in Python, and the reported computation times are taken on a MacBook Pro from 2019 with a 2.4 GHz quad-core Intel i5 processor.
-    \item \url{https://deeptransport.github.io/deep-tensor-py/examples/}
-\end{itemize}
+
+%\begin{itemize}
+%	\item Hierarchical Bayesian modelling including Pressure and Temperature
+%	\item parametrised model for pressure and temperature and non-parametric model for ozone
+%    \item Forward model ozone limb-sounding as linear inverse problem
+%    \item Marginal and full conditional posterior explicitly formulated
+%    \item samples from full conditional posterior via IRT
+%    \item sample-based affine map
+%    \item same procedure again
+%    \item full posterior mean and sample-based variance do not capture second ozone peak
+%    \item Pressure and Ozone highly correlated
+%    \item All programming and analysis in this thesis are done in Python, and the reported computation times are taken on a MacBook Pro from 2019 with a 2.4 GHz quad-core Intel i5 processor.
+%    \item \url{https://deeptransport.github.io/deep-tensor-py/examples/}
+%\end{itemize}
 \section{Hierarchical Bayesian Modelling}
 \label{sec:BayesIntro}
 First, the concept of hierarchical Bayesian modelling is introduced.
@@ -983,9 +984,6 @@ The max IACT is $\approx 1.2\pm 0.1$, hence every second marginal posterior samp
 The independent marginal posterior samples give posterior pressure and temperature profiles through their respective functions, see Eq.~\ref{eq:pressFunc} and Eq.~\ref{eq:tempFunc}.
 The posterior pressure profiles are plotted in Fig.~\ref{fig:AffPressSampl} and the posterior temperature profiles in Fig.~\ref{fig:AffTempSampl}.
 
-Next, with the RTO method as in Sec.\ref{subsec:FullCondPost} full conditional posterior ozone samples are obtained and plotted in Fig.~\ref{fig:AffOzonSampl}.
-
-
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[]{TTPaperFirstPressAffine.png}
@@ -999,21 +997,34 @@ Next, with the RTO method as in Sec.\ref{subsec:FullCondPost} full conditional p
 	\caption[]{29 posterior temperature samples based on the approximated model.}
 	\label{fig:AffTempSampl}
 \end{figure}
+\clearpage
 
+Next, with the RTO method as in Sec.\ref{subsec:FullCondPost} full conditional posterior ozone samples are obtained and plotted in Fig.~\ref{fig:AffOzonSampl}.
+
+We can see that ozone and pressure are higly correlated.
+the pressure is sligkty off
+the ozone peak is much lowe
+the second ozone peak is not recovered.
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[]{TTPaperFirstOzoneAffine.png}
 	\caption[]{30 posterior ozone samples via the RTO method based on the approximated model.}
 	\label{fig:AffOzonSampl}
 \end{figure}
+\clearpage
 
 \section{Conclusion}
+Including ozone, pressure and temperature within the inversion process, we show that ozone and pressure are highly correlated.
+The results show that a small change of pressure does have a big influence on the ozone profile.
+One could extend the current parametrised model of pressure to a non-parametric model, see e.g., \cite{RenateNonPara2026}.
+It is clear the data is uninformative about the ozone concentration in higher atmospheric regions and the second ozone peak is not recovered.
+Further we show that the model and the data do not contain information about the temperature profile.
 
-We report a IACT of close to one so that every second sample is an independent sample.. that is close to optimal.
-We show that ozone and pressure are highly correlated
-2nd ozone peak is not included.
-Once the TT is formed 2 function evaluations per independent sample are required.
-more loos unparameterise moedl for pressure see Angela 
+The here employed TT framework to approximate the marginal posterior distribution provides an efficient way to generate hyper-parameter samples.
+To obtain a approximation of the marginal posterior \text{xxxx} function evaluations are required.
+Once the TT is composed every second sample generated by the SIRT scheme present an independent sample of the marginal posterior.
+\textcolor{red}{This is close to optimal (IACT = 1), compare to other samplers?}
+
 \clearpage
 % {\renewcommand*\MakeUppercase[1]{#1}%
 % 	\printbibliography[heading=bibintoc,title={\bibtitle}]}
