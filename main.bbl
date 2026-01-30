@@ -100,57 +100,6 @@
     \field{year}{2012}
   \endentry
 
-  \entry{bardsley2015randomize}{article}{}
-    \name{author}{5}{}{%
-      {{hash=BJ}{%
-         family={Bardsley},
-         familyi={B\bibinitperiod},
-         given={J.},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=SA}{%
-         family={Seppanen},
-         familyi={S\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=SA}{%
-         family={Solonen},
-         familyi={S\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=HH}{%
-         family={Haario},
-         familyi={H\bibinitperiod},
-         given={H.},
-         giveni={H\bibinitperiod},
-      }}%
-      {{hash=KJ}{%
-         family={Kaipio},
-         familyi={K\bibinitperiod},
-         given={J.},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {SIAM}%
-    }
-    \strng{namehash}{BJ+1}
-    \strng{fullhash}{BJSASAHHKJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{number}{1}
-    \field{pages}{1136\bibrangedash 1158}
-    \field{title}{Randomize-then-optimize for sampling and uncertainty
-  quantification in electrical impedance tomography}
-    \field{volume}{3}
-    \field{journaltitle}{SIAM/ASA Journal on Uncertainty Quantification}
-    \field{year}{2015}
-  \endentry
-
   \entry{bardsley2014randomize}{article}{}
     \name{author}{4}{}{%
       {{hash=BJ}{%
@@ -1863,30 +1812,6 @@
     \field{title}{Monte Carlo errors with less errors}
     \field{volume}{156}
     \field{journaltitle}{Computer Physics Communications}
-    \field{year}{2004}
-  \endentry
-
-  \entry{UwerrM}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=WU}{%
-         family={Wolff},
-         familyi={W\bibinitperiod},
-         given={U.},
-         giveni={U\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {Humboldt-Universität to Berlin}%
-    }
-    \strng{namehash}{WU1}
-    \strng{fullhash}{WU1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-  \field{howpublished}{\url{https://www.physik.hu-berlin.de/de/com/ALPHAsoft}}
-    \field{note}{[Online; accessed 5/11/23]}
-    \field{title}{UWerr.m Version 6}
     \field{year}{2004}
   \endentry
 
